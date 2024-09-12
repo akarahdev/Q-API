@@ -1,5 +1,6 @@
 package dev.akarah.entities;
 
+import dev.akarah.datatypes.Location;
 import dev.akarah.item.Item;
 
 public interface Player extends Entity {
@@ -15,7 +16,6 @@ public interface Player extends Entity {
     void setItem(Item item, int slot);
     boolean hasItems(Item item);
     void removeItems(Item item);
-
 
     void setSidebarName(String name);
     void setSidebarLine(String text, int line);

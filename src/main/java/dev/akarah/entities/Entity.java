@@ -10,6 +10,7 @@ public interface Entity {
     int temporaryId();
     UUID uuid();
     Location location();
+    void teleport(Location location);
 
     <T> T component(EntityComponent<T> component);
     <T> void component(EntityComponent<T> component, T value);
