@@ -34,7 +34,7 @@ public class ResourceKey<T> {
 
     @Override
     public boolean equals(Object other) {
-        if(!(other instanceof ResourceKey orl))
+        if(!(other instanceof ResourceKey<?> orl))
             return false;
         return this.namespace.equals(orl.namespace)
             && this.location.equals(orl.location);
