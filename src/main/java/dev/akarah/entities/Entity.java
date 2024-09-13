@@ -6,7 +6,7 @@ import dev.akarah.datatypes.ResourceKey;
 import java.util.UUID;
 
 public interface Entity {
-    ResourceKey<Entity> mobId();
+    EntityType mobId();
     int temporaryId();
     UUID uuid();
     Location location();

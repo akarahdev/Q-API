@@ -1,6 +1,7 @@
 package dev.akarah.datatypes;
 
 import dev.akarah.entities.Entity;
+import dev.akarah.entities.EntityType;
 
 import java.util.stream.Stream;
 
@@ -23,5 +24,5 @@ public interface Dimension {
     void breakBlockAt(Location location);
 
     Stream<Entity> entities();
-    Entity spawnEntity(Location location, ResourceKey<Entity> entityType);
+    Entity spawnEntity(Location location, EntityType entityType);
 }
