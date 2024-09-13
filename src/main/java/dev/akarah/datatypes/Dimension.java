@@ -10,6 +10,7 @@ import java.util.stream.Stream;
  */
 public interface Dimension {
     /**
+     * Returns the name of the dimension.
      * @return The name of the dimension.
      */
     ResourceKey<Dimension> name();

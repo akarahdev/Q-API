@@ -1,5 +1,7 @@
 package dev.akarah.datatypes;
 
+import dev.akarah.meta.ApiUsage;
+
 public class Location {
     double x;
     double y;
@@ -7,6 +9,7 @@ public class Location {
     float pitch;
     float yaw;
 
+    @ApiUsage.Internal
     public Location(double x, double y, double z, float pitch, float yaw) {
         this.x = x;
         this.y = y;

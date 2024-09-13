@@ -22,10 +22,12 @@ public class MinecraftServer {
         return new ServerListeners();
     }
 
+    @ApiUsage.Internal
     public static ServerInstance getBackingInstance() {
         return backingInstance;
     }
 
+    @ApiUsage.Internal
     public static ServerInstance setBackingInstance(ServerInstance instance) {
         MinecraftServer.backingInstance = instance;
         return MinecraftServer.backingInstance;
