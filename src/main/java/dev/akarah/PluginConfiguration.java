@@ -9,7 +9,8 @@ import java.lang.reflect.InvocationTargetException;
 public class PluginConfiguration {
     public String id;
 
-    private PluginConfiguration() {}
+    private PluginConfiguration() {
+    }
 
     public static PluginConfiguration id(String id, ServerPlugin plugin) {
         var pc = new PluginConfiguration();
@@ -23,7 +24,8 @@ public class PluginConfiguration {
             var constructor = listener.getConstructor();
             var inst = constructor.newInstance();
             MinecraftServer.registerListener(inst, this.id);
-        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException exception) {
+        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException |
+                 InvocationTargetException exception) {
             System.err.println("Failed to add Player Event listener " + listener.getName());
             System.err.println("Class must have a valid empty constructor");
         }
@@ -35,7 +37,8 @@ public class PluginConfiguration {
             var constructor = listener.getConstructor();
             var inst = constructor.newInstance();
             MinecraftServer.registerListener(inst, this.id);
-        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException exception) {
+        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException |
+                 InvocationTargetException exception) {
             System.err.println("Failed to add Dynamic Registry listener " + listener.getName());
             System.err.println("Class must have a valid empty constructor");
         }
@@ -47,7 +50,8 @@ public class PluginConfiguration {
             var constructor = listener.getConstructor();
             var inst = constructor.newInstance();
             MinecraftServer.registerListener(inst, this.id);
-        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException exception) {
+        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException |
+                 InvocationTargetException exception) {
             System.err.println("Failed to add Static Registry listener " + listener.getName());
             System.err.println("Class must have a valid empty constructor");
         }

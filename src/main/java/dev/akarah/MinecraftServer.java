@@ -17,20 +17,6 @@ public class MinecraftServer {
     static List<EventPair<DynamicRegistryListener>> dynamicRegistryListeners = new ArrayList<>();
     static List<EventPair<StaticRegistryListener>> staticRegistryListeners = new ArrayList<>();
 
-    public static class ServerListeners {
-        public List<EventPair<DynamicRegistryListener>> dynamicRegistryListeners() {
-            return MinecraftServer.dynamicRegistryListeners;
-        }
-
-        public List<EventPair<StaticRegistryListener>> staticRegistryListeners() {
-            return MinecraftServer.staticRegistryListeners;
-        }
-
-        public List<EventPair<PlayerEventListener>> playerEventListeners() {
-            return MinecraftServer.playerEventListeners;
-        }
-    }
-
     public static ServerListeners listeners() {
         return new ServerListeners();
     }
@@ -71,14 +57,14 @@ public class MinecraftServer {
             MinecraftServer.listeners().playerEventListeners()
         );
 
-        for(var sublist : lists) {
+        for (var sublist : lists) {
             var markedForRemoval = new ArrayList<EventPair<?>>();
-            for(var eventPair : sublist) {
-                if(eventPair.pluginId().equals(pluginId)) {
+            for (var eventPair : sublist) {
+                if (eventPair.pluginId().equals(pluginId)) {
                     markedForRemoval.add(eventPair);
                 }
             }
-            for(var remove : markedForRemoval) {
+            for (var remove : markedForRemoval) {
                 sublist.remove(remove);
             }
         }
@@ -86,5 +72,19 @@ public class MinecraftServer {
 
     public static void deregisterPlugin(ServerPlugin plugin) {
         MinecraftServer.plugins.remove(plugin);
+    }
+
+    public static class ServerListeners {
+        public List<EventPair<DynamicRegistryListener>> dynamicRegistryListeners() {
+            return MinecraftServer.dynamicRegistryListeners;
+        }
+
+        public List<EventPair<StaticRegistryListener>> staticRegistryListeners() {
+            return MinecraftServer.staticRegistryListeners;
+        }
+
+        public List<EventPair<PlayerEventListener>> playerEventListeners() {
+            return MinecraftServer.playerEventListeners;
+        }
     }
 }

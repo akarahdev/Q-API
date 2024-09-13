@@ -9,9 +9,9 @@ public class Registries {
     public static Registry<Registry<?>> REGISTRIES;
 
     public static ResourceKey<Registry<Item>> ITEM
-            = ResourceKey.of("minecraft:item");
+        = ResourceKey.of("minecraft:item");
     public static ResourceKey<Registry<EntityType>> ENTITY_TYPES
-            = ResourceKey.of("minecraft:entity");
+        = ResourceKey.of("minecraft:entity");
     public static ResourceKey<Registry<Dimension>> DIMENSION
-            = ResourceKey.of("minecraft:dimension");
+        = ResourceKey.of("minecraft:dimension");
 }

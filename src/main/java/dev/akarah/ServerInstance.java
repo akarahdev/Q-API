@@ -8,6 +8,8 @@ import java.util.stream.Stream;
 
 public interface ServerInstance {
     Stream<Player> players();
+
     Dimension dimension(ResourceKey<Dimension> name);
+
     void runSync(Runnable runnable);
 }

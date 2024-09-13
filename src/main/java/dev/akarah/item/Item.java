@@ -10,13 +10,6 @@ public class Item {
     int amount;
     HashMap<ItemComponent<?>, Object> components = new HashMap<>();
 
-    private HashMap<ItemComponent<?>, Object> cloneComponents() {
-        var hm = new HashMap<ItemComponent<?>, Object>();
-        for(var key : this.components.keySet())
-            hm.put(key, this.components.get(key));
-        return hm;
-    }
-
     private Item(ResourceKey<Item> itemType, int amount) {
         this.itemType = itemType;
         this.amount = 1;
@@ -27,10 +20,6 @@ public class Item {
         this.amount = oldItem.amount;
         this.components = oldItem.cloneComponents();
         modify.accept(this);
-    }
-
-    public ResourceKey<Item> getType() {
-        return this.itemType;
     }
 
     public static Item of(String itemType) {
@@ -49,17 +38,28 @@ public class Item {
         return new Item(itemType, amount);
     }
 
-    public<T> Item component(ItemComponent<T> component, T value) {
+    private HashMap<ItemComponent<?>, Object> cloneComponents() {
+        var hm = new HashMap<ItemComponent<?>, Object>();
+        for (var key : this.components.keySet())
+            hm.put(key, this.components.get(key));
+        return hm;
+    }
+
+    public ResourceKey<Item> getType() {
+        return this.itemType;
+    }
+
+    public <T> Item component(ItemComponent<T> component, T value) {
         return new Item(this, item -> item.components.put(component, value));
     }
 
-    public<T> T component(ItemComponent<T> component) {
+    public <T> T component(ItemComponent<T> component) {
         // Safety: This is guaranteed safe at compile-time
         // by the type system.
         return (T) this.components.get(component);
     }
 
-    public<T> boolean hasComponent(ItemComponent<T> component) {
+    public <T> boolean hasComponent(ItemComponent<T> component) {
         return this.components.containsKey(component);
     }
 }

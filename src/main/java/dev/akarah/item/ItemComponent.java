@@ -6,12 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ItemComponent<T> {
-    ResourceKey<?> internalName;
-
-    public ItemComponent(ResourceKey<?> internalName) {
-        this.internalName = internalName;
-    }
-
     public static ItemComponent<String> ITEM_NAME = new ItemComponent<>(
         ResourceKey.of("minecraft:item_name"));
     public static ItemComponent<String> DISPLAY_NAME = new ItemComponent<>(
@@ -24,6 +18,10 @@ public class ItemComponent<T> {
         ResourceKey.of("minecraft:max_damage"));
     public static ItemComponent<HashMap<String, Object>> CUSTOM_DATA = new ItemComponent<>(
         ResourceKey.of("minecraft:custom_data"));
+    ResourceKey<?> internalName;
+    public ItemComponent(ResourceKey<?> internalName) {
+        this.internalName = internalName;
+    }
 
     @Override
     public int hashCode() {

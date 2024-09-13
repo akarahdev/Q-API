@@ -9,8 +9,8 @@ public class ResourceKey<T> {
         this.location = location;
     }
 
-    public static<T> ResourceKey<T> of(String path) {
-        if(path.contains(":")) {
+    public static <T> ResourceKey<T> of(String path) {
+        if (path.contains(":")) {
             return new ResourceKey<>(
                 path.split(":")[0],
                 path.split(":")[1]
@@ -34,7 +34,7 @@ public class ResourceKey<T> {
 
     @Override
     public boolean equals(Object other) {
-        if(!(other instanceof ResourceKey<?> orl))
+        if (!(other instanceof ResourceKey<?> orl))
             return false;
         return this.namespace.equals(orl.namespace)
             && this.location.equals(orl.location);
