@@ -1,6 +1,6 @@
 package dev.akarah.registry;
 
-import dev.akarah.datatypes.ResourceKey;
+import dev.akarah.datatypes.Identifier;
 import dev.akarah.meta.ApiUsage;
 
 import java.util.Optional;
@@ -13,7 +13,7 @@ public interface Registry<T> {
      * @return The value in the registry. Is empty if the key is not present
      * in the registry.
      */
-    Optional<T> lookup(ResourceKey<T> key);
+    Optional<T> lookup(Identifier<T> key);
 
     /**
      * Attempts to put a key-value pair in the registry.
@@ -22,11 +22,11 @@ public interface Registry<T> {
      * @param value       The value to associate with the key.
      * @throws RegistryFrozenException If the registry is unable to be modified.
      */
-    void put(ResourceKey<T> resourceKey, T value) throws RegistryFrozenException;
+    void put(Identifier<T> resourceKey, T value) throws RegistryFrozenException;
 
     @ApiUsage.Internal
     @ApiUsage.Unsafe
-    default T lookupUnsafe(ResourceKey<?> key) {
-        return this.lookup((ResourceKey<T>) key).orElse(null);
+    default T lookupUnsafe(Identifier<?> key) {
+        return this.lookup((Identifier<T>) key).orElse(null);
     }
 }

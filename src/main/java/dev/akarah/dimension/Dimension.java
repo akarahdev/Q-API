@@ -1,5 +1,7 @@
-package dev.akarah.datatypes;
+package dev.akarah.dimension;
 
+import dev.akarah.datatypes.Location;
+import dev.akarah.datatypes.Identifier;
 import dev.akarah.entities.Entity;
 import dev.akarah.entities.EntityType;
 
@@ -13,7 +15,7 @@ public interface Dimension {
      * Returns the name of the dimension.
      * @return The name of the dimension.
      */
-    ResourceKey<Dimension> name();
+    Identifier<Dimension> name();
 
     /**
      * Gets a block at a specific location.
@@ -21,9 +23,9 @@ public interface Dimension {
      * @param location The location to check for the block at.
      * @return The block at the specified location.
      */
-    ResourceKey<?> blockAt(Location location);
+    Identifier<?> blockAt(Location location);
 
-    void setBlockAt(Location location, ResourceKey<?> blockType);
+    void setBlockAt(Location location, Identifier<?> blockType);
 
     void breakBlockAt(Location location);
 

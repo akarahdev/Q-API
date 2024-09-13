@@ -1,22 +1,22 @@
 package dev.akarah.datatypes;
 
-public class ResourceKey<T> {
+public class Identifier<T> {
     String namespace;
     String location;
 
-    private ResourceKey(String namespace, String location) {
+    private Identifier(String namespace, String location) {
         this.namespace = namespace;
         this.location = location;
     }
 
-    public static <T> ResourceKey<T> of(String path) {
+    public static <T> Identifier<T> of(String path) {
         if (path.contains(":")) {
-            return new ResourceKey<>(
+            return new Identifier<>(
                 path.split(":")[0],
                 path.split(":")[1]
             );
         }
-        return new ResourceKey<>(
+        return new Identifier<>(
             "minecraft",
             path
         );
@@ -34,7 +34,7 @@ public class ResourceKey<T> {
 
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof ResourceKey<?> orl))
+        if (!(other instanceof Identifier<?> orl))
             return false;
         return this.namespace.equals(orl.namespace)
             && this.location.equals(orl.location);

@@ -1,27 +1,27 @@
 package dev.akarah.entities;
 
 import dev.akarah.datatypes.Location;
-import dev.akarah.datatypes.ResourceKey;
+import dev.akarah.datatypes.Identifier;
 import dev.akarah.entities.types.EquipmentComponent;
 import dev.akarah.entities.types.HealthComponent;
 
 public class EntityComponent<T> {
     public static EntityComponent<Location> LOCATION =
-        new EntityComponent<>(ResourceKey.of("api:location"));
+        new EntityComponent<>(Identifier.of("api:location"));
     public static EntityComponent<String> CUSTOM_NAME =
-        new EntityComponent<>(ResourceKey.of("api:entity_name"));
+        new EntityComponent<>(Identifier.of("api:entity_name"));
     public static EntityComponent<HealthComponent> HEALTH =
-        new EntityComponent<>(ResourceKey.of("api:health"));
+        new EntityComponent<>(Identifier.of("api:health"));
     public static EntityComponent<EquipmentComponent> EQUIPMENT =
-        new EntityComponent<>(ResourceKey.of("api:equipment"));
+        new EntityComponent<>(Identifier.of("api:equipment"));
     public static EntityComponent<Boolean> NO_PHYSICS =
-        new EntityComponent<>(ResourceKey.of("api:no_physics"));
-    ResourceKey<?> internalName;
-    public EntityComponent(ResourceKey<?> internalName) {
+        new EntityComponent<>(Identifier.of("api:no_physics"));
+    Identifier<?> internalName;
+    public EntityComponent(Identifier<?> internalName) {
         this.internalName = internalName;
     }
 
-    public ResourceKey<?> internalName() {
+    public Identifier<?> internalName() {
         return this.internalName;
     }
 

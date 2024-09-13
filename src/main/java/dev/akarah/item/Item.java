@@ -1,16 +1,16 @@
 package dev.akarah.item;
 
-import dev.akarah.datatypes.ResourceKey;
+import dev.akarah.datatypes.Identifier;
 
 import java.util.HashMap;
 import java.util.function.Consumer;
 
 public class Item {
-    ResourceKey<Item> itemType;
+    Identifier<Item> itemType;
     int amount;
     HashMap<ItemComponent<?>, Object> components = new HashMap<>();
 
-    private Item(ResourceKey<Item> itemType, int amount) {
+    private Item(Identifier<Item> itemType, int amount) {
         this.itemType = itemType;
         this.amount = 1;
     }
@@ -23,18 +23,18 @@ public class Item {
     }
 
     public static Item of(String itemType) {
-        return new Item(ResourceKey.of(itemType), 1);
+        return new Item(Identifier.of(itemType), 1);
     }
 
     public static Item of(String itemType, int amount) {
-        return new Item(ResourceKey.of(itemType), amount);
+        return new Item(Identifier.of(itemType), amount);
     }
 
-    public static Item of(ResourceKey<Item> itemType) {
+    public static Item of(Identifier<Item> itemType) {
         return new Item(itemType, 1);
     }
 
-    public static Item of(ResourceKey<Item> itemType, int amount) {
+    public static Item of(Identifier<Item> itemType, int amount) {
         return new Item(itemType, amount);
     }
 
@@ -45,7 +45,7 @@ public class Item {
         return hm;
     }
 
-    public ResourceKey<Item> getType() {
+    public Identifier<Item> getType() {
         return this.itemType;
     }
 
