@@ -1,5 +1,6 @@
 package dev.akarah.registry;
 
+import dev.akarah.dimension.Block;
 import dev.akarah.dimension.BlockType;
 import dev.akarah.dimension.Dimension;
 import dev.akarah.datatypes.Identifier;

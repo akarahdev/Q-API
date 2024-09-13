@@ -2,10 +2,12 @@ package dev.akarah.dimension;
 
 import dev.akarah.datatypes.Identifier;
 
-public class BlockType {
+public class BlockComponent<T> {
+    public static BlockComponent<Integer> AGE = new BlockComponent<>(Identifier.of("age"));
+
     Identifier<?> internalName;
 
-    public BlockType(Identifier<?> internalName) {
+    public BlockComponent(Identifier<?> internalName) {
         this.internalName = internalName;
     }
 
