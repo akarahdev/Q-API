@@ -1,6 +1,7 @@
 package dev.akarah.item;
 
 import dev.akarah.datatypes.ResourceKey;
+import dev.akarah.meta.ApiUsage;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +20,8 @@ public class ItemComponent<T> {
     public static ItemComponent<HashMap<String, Object>> CUSTOM_DATA = new ItemComponent<>(
         ResourceKey.of("minecraft:custom_data"));
     ResourceKey<?> internalName;
+
+    @ApiUsage.Unsafe
     public ItemComponent(ResourceKey<?> internalName) {
         this.internalName = internalName;
     }

@@ -4,6 +4,7 @@ import dev.akarah.entities.Player;
 import dev.akarah.event.DynamicRegistryListener;
 import dev.akarah.event.PlayerEventListener;
 import dev.akarah.event.StaticRegistryListener;
+import dev.akarah.meta.ApiUsage;
 import dev.akarah.util.EventPair;
 
 import java.util.ArrayList;
@@ -34,22 +35,27 @@ public class MinecraftServer {
         return backingInstance.players();
     }
 
+    @ApiUsage.Internal
     public static void registerListener(PlayerEventListener listener, String pluginId) {
         MinecraftServer.playerEventListeners.add(new EventPair<>(pluginId, listener));
     }
 
+    @ApiUsage.Internal
     public static void registerListener(DynamicRegistryListener listener, String pluginId) {
         MinecraftServer.dynamicRegistryListeners.add(new EventPair<>(pluginId, listener));
     }
 
+    @ApiUsage.Internal
     public static void registerListener(StaticRegistryListener listener, String pluginId) {
         MinecraftServer.staticRegistryListeners.add(new EventPair<>(pluginId, listener));
     }
 
+    @ApiUsage.Internal
     public static void registerPlugin(ServerPlugin plugin) {
         MinecraftServer.plugins.add(plugin);
     }
 
+    @ApiUsage.Internal
     public static void deregisterListenersFor(String pluginId) {
         var lists = List.of(
             MinecraftServer.listeners().dynamicRegistryListeners(),
@@ -70,6 +76,7 @@ public class MinecraftServer {
         }
     }
 
+    @ApiUsage.Internal
     public static void deregisterPlugin(ServerPlugin plugin) {
         MinecraftServer.plugins.remove(plugin);
     }

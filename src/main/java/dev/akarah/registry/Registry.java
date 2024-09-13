@@ -1,6 +1,7 @@
 package dev.akarah.registry;
 
 import dev.akarah.datatypes.ResourceKey;
+import dev.akarah.meta.ApiUsage;
 
 import java.util.Optional;
 
@@ -22,4 +23,10 @@ public interface Registry<T> {
      * @throws RegistryFrozenException If the registry is unable to be modified.
      */
     void put(ResourceKey<T> resourceKey, T value) throws RegistryFrozenException;
+
+    @ApiUsage.Internal
+    @ApiUsage.Unsafe
+    default T lookupUnsafe(ResourceKey<?> key) {
+        return this.lookup((ResourceKey<T>) key).orElse(null);
+    }
 }
