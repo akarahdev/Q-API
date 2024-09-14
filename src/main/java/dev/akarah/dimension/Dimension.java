@@ -23,9 +23,9 @@ public interface Dimension {
      * @param location The location to check for the block at.
      * @return The block at the specified location.
      */
-    Identifier<?> blockAt(Location location);
+    Block blockAt(Location location);
 
-    void setBlockAt(Location location, Identifier<?> blockType);
+    void setBlockAt(Location location, Block block);
 
     void breakBlockAt(Location location);
 
