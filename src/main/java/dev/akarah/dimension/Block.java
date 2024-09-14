@@ -25,6 +25,10 @@ public class Block {
         modification.accept(this);
     }
 
+    public BlockType blockType() {
+        return this.blockType;
+    }
+
     public Block(BlockType blockType) {
         this.blockType = blockType;
     }
