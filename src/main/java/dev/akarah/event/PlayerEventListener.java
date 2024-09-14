@@ -11,10 +11,12 @@ public interface PlayerEventListener {
     default void onDisconnect(Player player) {
     }
 
-    default void onPlaceBlock(Player player, Location blockPos) {
+    default EventStatus onPlaceBlock(Player player, Location blockPos) {
+        return EventStatus.NORMAL;
     }
 
-    default void onBreakBlock(Player player, Location blockPos) {
+    default EventStatus onBreakBlock(Player player, Location blockPos) {
+        return EventStatus.NORMAL;
     }
 
     default void onLeftClick(Player player, Location eventBlockPos) {
@@ -26,9 +28,23 @@ public interface PlayerEventListener {
     default void onRespawn(Player player) {
     }
 
-    default void onKillPlayer(Player killer, Player victim) {
+    default EventStatus onDamageEntity(Player killer, Entity victim) {
+        return EventStatus.NORMAL;
     }
 
-    default void onKillEntity(Player killer, Entity victim) {
+    default EventStatus onKillEntity(Player killer, Entity victim) {
+        return EventStatus.NORMAL;
+    }
+
+    default EventStatus onDamagePlayer(Player killer, Player victim) {
+        return EventStatus.NORMAL;
+    }
+
+    default EventStatus onKillPlayer(Player killer, Player victim) {
+        return EventStatus.NORMAL;
+    }
+
+    default EventStatus onTakeDamage(Player victim) {
+        return EventStatus.NORMAL;
     }
 }
