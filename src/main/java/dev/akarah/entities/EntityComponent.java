@@ -2,11 +2,10 @@ package dev.akarah.entities;
 
 import dev.akarah.datatypes.Location;
 import dev.akarah.datatypes.Identifier;
-import dev.akarah.entities.types.EquipmentComponent;
-import dev.akarah.entities.types.HealthComponent;
+import dev.akarah.entities.types.*;
 
 public class EntityComponent<T> {
-    public static EntityComponent<Location> LOCATION =
+    public static EntityComponent<LocationComponent> LOCATION =
         new EntityComponent<>(Identifier.of("api:location"));
     public static EntityComponent<String> CUSTOM_NAME =
         new EntityComponent<>(Identifier.of("api:entity_name"));
@@ -16,6 +15,10 @@ public class EntityComponent<T> {
         new EntityComponent<>(Identifier.of("api:equipment"));
     public static EntityComponent<Boolean> NO_PHYSICS =
         new EntityComponent<>(Identifier.of("api:no_physics"));
+    public static EntityComponent<PlayerComponent> PLAYER =
+        new EntityComponent<>(Identifier.of("api:player"));
+    public static EntityComponent<IdentityComponent> IDENTITY =
+        new EntityComponent<>(Identifier.of("api:identity"));
 
     Identifier<?> internalName;
     public EntityComponent(Identifier<?> internalName) {
