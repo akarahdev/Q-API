@@ -1,6 +1,7 @@
 package dev.akarah.entities;
 
 import dev.akarah.datatypes.Location;
+import dev.akarah.dimension.Dimension;
 
 import java.util.UUID;
 
@@ -12,6 +13,8 @@ public interface Entity {
     UUID uuid();
 
     Location location();
+
+    Dimension dimension();
 
     void teleport(Location location);
 
