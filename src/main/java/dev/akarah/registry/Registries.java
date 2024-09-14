@@ -10,7 +10,7 @@ import dev.akarah.item.Item;
 import java.util.Optional;
 
 public class Registries {
-    public static Registry<Registry<Object>> REGISTRIES;
+    public static Registry<Registry<?>> REGISTRIES;
 
     public static Identifier<Registry<Item>> ITEM
         = Identifier.of("minecraft:item");
