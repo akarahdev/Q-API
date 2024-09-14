@@ -3,67 +3,29 @@ package dev.akarah.entities.types;
 import dev.akarah.item.Item;
 
 public interface EquipmentComponent {
-    Item helmet;
-    Item chestplate;
-    Item leggings;
-    Item boots;
-    Item mainHand;
-    Item offHand;
 
-    public EquipmentComponent(Item helmet, Item chestplate, Item leggings, Item boots, Item mainHand, Item offHand) {
-        this.helmet = helmet;
-        this.chestplate = chestplate;
-        this.leggings = leggings;
-        this.boots = boots;
-        this.mainHand = mainHand;
-        this.offHand = offHand;
-    }
 
-    public Item helmet() {
-        return this.helmet;
-    }
+    Item helmet();
 
-    public EquipmentComponent helmet(Item helmet) {
-        return new EquipmentComponent(helmet, chestplate, leggings, boots, mainHand, offHand);
-    }
+    void helmet(Item helmet);
 
-    public Item chestplate() {
-        return this.chestplate;
-    }
+    Item chestplate();
 
-    public EquipmentComponent chestplate(Item chestplate) {
-        return new EquipmentComponent(helmet, chestplate, leggings, boots, mainHand, offHand);
-    }
+    void chestplate(Item chestplate);
 
-    public Item leggings() {
-        return this.leggings;
-    }
+    Item leggings();
 
-    public EquipmentComponent leggings(Item leggings) {
-        return new EquipmentComponent(helmet, chestplate, leggings, boots, mainHand, offHand);
-    }
+    void leggings(Item leggings);
 
-    public Item boots() {
-        return this.helmet;
-    }
+    Item boots();
 
-    public EquipmentComponent boots(Item boots) {
-        return new EquipmentComponent(helmet, chestplate, leggings, boots, mainHand, offHand);
-    }
+    void boots(Item boots);
 
-    public Item mainHand() {
-        return this.helmet;
-    }
+    Item mainHand();
 
-    public EquipmentComponent mainHand(Item mainHand) {
-        return new EquipmentComponent(helmet, chestplate, leggings, boots, mainHand, offHand);
-    }
+    void mainHand(Item mainHand);
 
-    public Item offHand() {
-        return this.helmet;
-    }
+    Item offHand();
 
-    public EquipmentComponent offHand(Item offHand) {
-        return new EquipmentComponent(helmet, chestplate, leggings, boots, mainHand, offHand);
-    }
+    void offHand(Item offHand);
 }

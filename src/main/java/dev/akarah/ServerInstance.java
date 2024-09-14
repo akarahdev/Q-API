@@ -2,12 +2,12 @@ package dev.akarah;
 
 import dev.akarah.dimension.Dimension;
 import dev.akarah.datatypes.Identifier;
-import dev.akarah.entities.Player;
+import dev.akarah.entities.Entity;
 
 import java.util.stream.Stream;
 
 public interface ServerInstance {
-    Stream<Player> players();
+    Stream<Entity> players();
 
     Dimension dimension(Identifier<Dimension> name);
 

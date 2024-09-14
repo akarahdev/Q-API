@@ -1,6 +1,6 @@
 package dev.akarah;
 
-import dev.akarah.entities.Player;
+import dev.akarah.entities.Entity;
 import dev.akarah.event.DynamicRegistryListener;
 import dev.akarah.event.PlayerEventListener;
 import dev.akarah.event.StaticRegistryListener;
@@ -33,7 +33,7 @@ public class MinecraftServer {
         return MinecraftServer.backingInstance;
     }
 
-    public static Stream<Player> players() {
+    public static Stream<Entity> players() {
         return backingInstance.players();
     }
 

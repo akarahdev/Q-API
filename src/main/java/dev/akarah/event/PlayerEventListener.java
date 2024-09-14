@@ -61,7 +61,7 @@ public interface PlayerEventListener {
         return EventStatus.NORMAL;
     }
 
-    default EventStatus onTakeDamage(Player victim) {
+    default EventStatus onTakeDamage(Entity victim) {
         return EventStatus.NORMAL;
     }
 }
