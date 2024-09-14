@@ -6,17 +6,7 @@ import dev.akarah.dimension.Dimension;
 import java.util.UUID;
 
 public interface Entity {
-    EntityType mobId();
-
-    int temporaryId();
-
-    UUID uuid();
-
-    Location location();
-
-    Dimension dimension();
-
-    void teleport(Location location);
+    EntityType entityType();
 
     <T> T component(EntityComponent<T> component);
 

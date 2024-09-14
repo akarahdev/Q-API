@@ -1,27 +1,11 @@
 package dev.akarah.entities.types;
 
-public class HealthComponent {
-    double health;
-    double maxHealth;
+public interface HealthComponent {
+    double health();
 
-    public HealthComponent(double health, double maxHealth) {
-        this.health = health;
-        this.maxHealth = maxHealth;
-    }
+    double maxHealth();
 
-    public double health() {
-        return this.health;
-    }
+    HealthComponent health(double health);
 
-    public double maxHealth() {
-        return this.maxHealth;
-    }
-
-    public HealthComponent health(double health) {
-        return new HealthComponent(health, maxHealth);
-    }
-
-    public HealthComponent maxHealth(double maxHealth) {
-        return new HealthComponent(health, maxHealth);
-    }
+    HealthComponent maxHealth(double maxHealth);
 }

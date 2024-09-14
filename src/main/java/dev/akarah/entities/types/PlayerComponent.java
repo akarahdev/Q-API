@@ -1,8 +1,8 @@
-package dev.akarah.entities;
+package dev.akarah.entities.types;
 
 import dev.akarah.item.Item;
 
-public interface Player extends Entity {
+public interface PlayerComponent {
     void sendMessage(String message);
 
     void sendActionBar(String message);

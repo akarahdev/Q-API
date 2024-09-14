@@ -2,7 +2,7 @@ package dev.akarah.entities.types;
 
 import dev.akarah.item.Item;
 
-public class EquipmentComponent {
+public interface EquipmentComponent {
     Item helmet;
     Item chestplate;
     Item leggings;

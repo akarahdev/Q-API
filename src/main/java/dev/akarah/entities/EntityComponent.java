@@ -16,6 +16,7 @@ public class EntityComponent<T> {
         new EntityComponent<>(Identifier.of("api:equipment"));
     public static EntityComponent<Boolean> NO_PHYSICS =
         new EntityComponent<>(Identifier.of("api:no_physics"));
+
     Identifier<?> internalName;
     public EntityComponent(Identifier<?> internalName) {
         this.internalName = internalName;
