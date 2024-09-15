@@ -1,6 +1,7 @@
 package dev.akarah.item;
 
 import dev.akarah.datatypes.Identifier;
+import dev.akarah.item.components.DamageComponent;
 import dev.akarah.meta.ApiUsage;
 
 import java.util.HashMap;
@@ -13,10 +14,8 @@ public class ItemComponent<T> {
         Identifier.of("minecraft:display_name"));
     public static ItemComponent<List<String>> LORE = new ItemComponent<>(
         Identifier.of("minecraft:lore"));
-    public static ItemComponent<Integer> DAMAGE = new ItemComponent<>(
+    public static ItemComponent<DamageComponent> DAMAGE = new ItemComponent<>(
         Identifier.of("minecraft:damage"));
-    public static ItemComponent<Integer> MAX_DAMAGE = new ItemComponent<>(
-        Identifier.of("minecraft:max_damage"));
     public static ItemComponent<HashMap<String, Object>> CUSTOM_DATA = new ItemComponent<>(
         Identifier.of("minecraft:custom_data"));
     Identifier<?> internalName;
