@@ -1,6 +1,6 @@
 package dev.akarah.item;
 
-import dev.akarah.datatypes.Identifier;
+import dev.akarah.datatypes.server.Identifier;
 
 import java.util.HashMap;
 import java.util.function.Consumer;

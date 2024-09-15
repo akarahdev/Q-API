@@ -1,6 +1,6 @@
 package dev.akarah.event;
 
-import dev.akarah.datatypes.Location;
+import dev.akarah.datatypes.server.Location;
 import dev.akarah.entities.Entity;
 
 public interface PlayerEventListener {

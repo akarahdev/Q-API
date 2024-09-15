@@ -1,4 +1,4 @@
-package dev.akarah.nbt;
+package dev.akarah.datatypes.nbt;
 
 public sealed interface NbtTag {
     record End() implements NbtTag {}

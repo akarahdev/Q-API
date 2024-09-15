@@ -1,4 +1,4 @@
-package dev.akarah.util;
+package dev.akarah.datatypes.event;
 
 public record EventPair<EventType>(
     String pluginId,

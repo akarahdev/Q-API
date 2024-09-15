@@ -1,4 +1,4 @@
-package dev.akarah.datatypes;
+package dev.akarah.datatypes.server;
 
 import dev.akarah.meta.ApiUsage;
 

@@ -1,12 +1,10 @@
 package dev.akarah.dimension;
 
-import dev.akarah.datatypes.Identifier;
-import dev.akarah.item.ItemComponent;
+import dev.akarah.datatypes.server.Identifier;
 import dev.akarah.registry.Registries;
 
 import java.util.HashMap;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class Block {
     BlockType blockType;

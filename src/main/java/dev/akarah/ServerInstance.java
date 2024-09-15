@@ -1,7 +1,7 @@
 package dev.akarah;
 
 import dev.akarah.dimension.Dimension;
-import dev.akarah.datatypes.Identifier;
+import dev.akarah.datatypes.server.Identifier;
 import dev.akarah.entities.Entity;
 
 import java.util.stream.Stream;

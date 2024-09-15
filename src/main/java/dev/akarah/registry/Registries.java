@@ -1,9 +1,8 @@
 package dev.akarah.registry;
 
-import dev.akarah.dimension.Block;
 import dev.akarah.dimension.BlockType;
 import dev.akarah.dimension.Dimension;
-import dev.akarah.datatypes.Identifier;
+import dev.akarah.datatypes.server.Identifier;
 import dev.akarah.entities.EntityType;
 import dev.akarah.item.Item;
 

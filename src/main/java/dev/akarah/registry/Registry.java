@@ -1,6 +1,6 @@
 package dev.akarah.registry;
 
-import dev.akarah.datatypes.Identifier;
+import dev.akarah.datatypes.server.Identifier;
 import dev.akarah.meta.ApiUsage;
 
 import java.util.Optional;

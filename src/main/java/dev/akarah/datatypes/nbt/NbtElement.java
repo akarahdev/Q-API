@@ -1,4 +1,4 @@
-package dev.akarah.nbt;
+package dev.akarah.datatypes.nbt;
 
 import java.util.Arrays;
 import java.util.HashMap;

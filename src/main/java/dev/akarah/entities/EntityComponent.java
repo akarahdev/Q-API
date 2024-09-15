@@ -1,7 +1,6 @@
 package dev.akarah.entities;
 
-import dev.akarah.datatypes.Location;
-import dev.akarah.datatypes.Identifier;
+import dev.akarah.datatypes.server.Identifier;
 import dev.akarah.entities.types.*;
 
 public class EntityComponent<T> {

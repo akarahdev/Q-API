@@ -1,6 +1,6 @@
 package dev.akarah.item.components;
 
-import dev.akarah.nbt.NbtElement;
+import dev.akarah.datatypes.nbt.NbtElement;
 
 public interface CustomDataComponent {
     String hasTag(String tag);

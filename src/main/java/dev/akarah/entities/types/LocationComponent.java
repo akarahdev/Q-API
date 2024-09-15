@@ -1,6 +1,6 @@
 package dev.akarah.entities.types;
 
-import dev.akarah.datatypes.Location;
+import dev.akarah.datatypes.server.Location;
 import dev.akarah.dimension.Dimension;
 
 public interface LocationComponent {

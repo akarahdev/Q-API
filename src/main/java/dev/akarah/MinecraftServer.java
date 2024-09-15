@@ -5,7 +5,7 @@ import dev.akarah.event.DynamicRegistryListener;
 import dev.akarah.event.PlayerEventListener;
 import dev.akarah.event.StaticRegistryListener;
 import dev.akarah.meta.ApiUsage;
-import dev.akarah.util.EventPair;
+import dev.akarah.datatypes.event.EventPair;
 
 import java.util.ArrayList;
 import java.util.List;

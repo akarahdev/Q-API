@@ -1,7 +1,7 @@
 package dev.akarah.dimension;
 
-import dev.akarah.datatypes.Location;
-import dev.akarah.datatypes.Identifier;
+import dev.akarah.datatypes.server.Location;
+import dev.akarah.datatypes.server.Identifier;
 import dev.akarah.entities.Entity;
 import dev.akarah.entities.EntityType;
 

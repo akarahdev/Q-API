@@ -1,6 +1,6 @@
 package dev.akarah.dimension;
 
-import dev.akarah.datatypes.Identifier;
+import dev.akarah.datatypes.server.Identifier;
 
 public class BlockComponent<T> {
     public static BlockComponent<Integer> AGE = new BlockComponent<>(Identifier.of("age"));

@@ -1,4 +1,4 @@
-package dev.akarah.datatypes;
+package dev.akarah.datatypes.server;
 
 public class Identifier<T> {
     String namespace;
