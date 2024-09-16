@@ -27,16 +27,17 @@ publishing {
             from(components["java"])
 
             pom {
-                name = "MinecraftServerAPI"
-                description = "Description"
+                name = "Q-API"
+                description = "API for creating Minecraft servers"
                 url = "https://akarah.dev"
 
                 scm {
-                    url = "https://github/akarahdev/MinecraftServerAPI"
+                    url = "https://github/akarahdev/Q-API"
                 }
+
                 issueManagement {
                     system = "github"
-                    url = "https://github.com/akarahdev/MinecraftServerAPI/issues"
+                    url = "https://github.com/akarahdev/Q-API/issues"
                 }
                 licenses {
                     license {
