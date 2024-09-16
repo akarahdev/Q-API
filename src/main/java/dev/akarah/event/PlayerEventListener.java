@@ -4,6 +4,8 @@ import dev.akarah.datatypes.server.Location;
 import dev.akarah.entities.Entity;
 import dev.akarah.meta.ApiUsage;
 
+import java.nio.ByteBuffer;
+
 public interface PlayerEventListener {
     /**
      * Ran when a player connects to the server.
@@ -87,8 +89,7 @@ public interface PlayerEventListener {
     default void onClickInventory(Entity player, int slot) {}
 
     @ApiUsage.Experimental
-    default void onCustomPayload() {}
+    default void onCustomPayload(ByteBuffer byteBuffer) {}
 
     default void onInteract(Entity player, Entity other) {}
-
 }
