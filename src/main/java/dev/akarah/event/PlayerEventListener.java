@@ -69,7 +69,7 @@ public interface PlayerEventListener {
     }
 
     default void onSneak(Entity player) {}
-    default void onUnsneak(Entity player) {}
+    default void onStopSneak(Entity player) {}
     default void onStartSprint(Entity player) {}
     default void onStopSprint(Entity player) {}
 
@@ -77,7 +77,7 @@ public interface PlayerEventListener {
     default void onRenameItem(Entity player) {}
 
     default void onSwapHands(Entity player) {}
-    default void onDropitem(Entity player) {}
+    default void onDropItem(Entity player) {}
 
     default EventStatus onUseItem(Entity player) { return EventStatus.NORMAL; }
 
