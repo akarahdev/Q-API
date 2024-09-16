@@ -2,6 +2,7 @@ package dev.akarah.event;
 
 import dev.akarah.datatypes.server.Location;
 import dev.akarah.entities.Entity;
+import dev.akarah.meta.ApiUsage;
 
 public interface PlayerEventListener {
     /**
@@ -64,4 +65,30 @@ public interface PlayerEventListener {
     default EventStatus onTakeDamage(Entity victim) {
         return EventStatus.NORMAL;
     }
+
+    default void onSneak(Entity player) {}
+    default void onUnsneak(Entity player) {}
+    default void onStartSprint(Entity player) {}
+    default void onStopSprint(Entity player) {}
+
+    default void onMoveVehicle(Entity player, Entity vehicle) {}
+    default void onRenameItem(Entity player) {}
+
+    default void onSwapHands(Entity player) {}
+    default void onDropitem(Entity player) {}
+
+    default EventStatus onUseItem(Entity player) { return EventStatus.NORMAL; }
+
+    @ApiUsage.Experimental
+    default EventStatus onChat(Entity player, String message) { return EventStatus.NORMAL; }
+
+    default void onOpenInventory(Entity player) {}
+    default void onCloseInventory(Entity player) {}
+    default void onClickInventory(Entity player, int slot) {}
+
+    @ApiUsage.Experimental
+    default void onCustomPayload() {}
+
+    default void onInteract(Entity player, Entity other) {}
+
 }
