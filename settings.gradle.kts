@@ -1,2 +1,2 @@
-rootProject.name = "MinecraftServerAPI"
+rootProject.name = "Q-API"
 
