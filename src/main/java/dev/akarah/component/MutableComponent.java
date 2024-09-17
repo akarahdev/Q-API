@@ -1,9 +1,9 @@
 package dev.akarah.component;
 
-public abstract class MutableComponent<
+public interface MutableComponent<
         Type,
         Holder extends ComponentHolder<Holder, Master>,
         Master extends ComponentMaster<Holder, Master>
         > extends AbstractComponent<Type, Holder, Master> {
-    public abstract void set(Holder holder, Type value);
+    void set(Holder holder, Type value);
 }

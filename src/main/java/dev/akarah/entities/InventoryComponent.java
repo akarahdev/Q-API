@@ -1,4 +1,4 @@
-package dev.akarah.entities.types;
+package dev.akarah.entities;
 
 import dev.akarah.item.Item;
 

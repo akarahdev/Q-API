@@ -1,13 +1,24 @@
 package dev.akarah.entities;
 
-import java.util.Optional;
+import dev.akarah.component.AbstractComponent;
+import dev.akarah.component.ComponentHolder;
 
-public interface Entity {
-    EntityType entityType();
+public abstract class Entity implements ComponentHolder<Entity, EntityComponent> {
+    EntityType entityType;
 
-    <T> Optional<T> component(EntityComponent<T> component);
+    EquipmentComponent equipment;
+    HealthComponent health;
+    LocationComponent location;
 
-    <T> void component(EntityComponent<T> component, T value);
+    IdentityComponent identity;
+    PlayerComponent player;
 
-    <T> boolean hasComponent(EntityComponent<T> component);
+    public EntityType entityType() {
+        return this.entityType;
+    }
+
+    @Override
+    public Entity copy() {
+        return this;
+    }
 }

@@ -1,4 +1,4 @@
-package dev.akarah.entities.types;
+package dev.akarah.entities;
 
 public interface GUIComponent {
     void sendMessage(String message);

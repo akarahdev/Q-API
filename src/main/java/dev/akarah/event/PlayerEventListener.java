@@ -2,6 +2,7 @@ package dev.akarah.event;
 
 import dev.akarah.datatypes.server.Location;
 import dev.akarah.entities.Entity;
+import dev.akarah.entities.PlayerComponent;
 import dev.akarah.meta.ApiUsage;
 
 import java.nio.ByteBuffer;
@@ -10,7 +11,7 @@ public interface PlayerEventListener {
     /**
      * Ran when a player connects to the server.
      * @param player The connecting player.
-     *               Guaranteed to have an {@link dev.akarah.entities.types.PlayerComponent}
+     *               Guaranteed to have an {@link PlayerComponent}
      */
     default void onConnect(Entity player) {
     }
@@ -18,7 +19,7 @@ public interface PlayerEventListener {
     /**
      * Ran when a player disconnects from the server.
      * @param player The disconnecting player.
-     *               Guaranteed to have an {@link dev.akarah.entities.types.PlayerComponent}
+     *               Guaranteed to have an {@link PlayerComponent}
      */
     default void onDisconnect(Entity player) {
     }
@@ -26,7 +27,7 @@ public interface PlayerEventListener {
     /**
      * Ran when a player places a block.
      * @param player The player that placed the block.
-     *               Guaranteed to have an {@link dev.akarah.entities.types.PlayerComponent}
+     *               Guaranteed to have an {@link PlayerComponent}
      * @param blockPos The location the block was placed at.
      * @return The event status.
      */

@@ -1,35 +1,14 @@
 package dev.akarah.entities;
 
-import dev.akarah.datatypes.server.Identifier;
-import dev.akarah.entities.types.*;
+import dev.akarah.component.ComponentMaster;
 
-public class EntityComponent<T> {
-    public static EntityComponent<LocationComponent> LOCATION =
-        new EntityComponent<>(Identifier.of("api:location"));
-    public static EntityComponent<String> CUSTOM_NAME =
-        new EntityComponent<>(Identifier.of("api:entity_name"));
-    public static EntityComponent<HealthComponent> HEALTH =
-        new EntityComponent<>(Identifier.of("api:health"));
-    public static EntityComponent<EquipmentComponent> EQUIPMENT =
-        new EntityComponent<>(Identifier.of("api:equipment"));
-    public static EntityComponent<Boolean> NO_PHYSICS =
-        new EntityComponent<>(Identifier.of("api:no_physics"));
-    public static EntityComponent<PlayerComponent> PLAYER =
-        new EntityComponent<>(Identifier.of("api:player"));
-    public static EntityComponent<IdentityComponent> IDENTITY =
-        new EntityComponent<>(Identifier.of("api:identity"));
+public class EntityComponent implements ComponentMaster<Entity, EntityComponent> {
+    public static LocationComponent LOCATION =
+        new LocationComponent(null, null);
+    public static HealthComponent HEALTH =
+        new HealthComponent(0, 0);
+    public static EquipmentComponent EQUIPMENT =
+        new EquipmentComponent(null, null, null, null, null, null);
 
-    Identifier<?> internalName;
-    public EntityComponent(Identifier<?> internalName) {
-        this.internalName = internalName;
-    }
-
-    public Identifier<?> internalName() {
-        return this.internalName;
-    }
-
-    @Override
-    public int hashCode() {
-        return this.internalName.hashCode();
-    }
+    private EntityComponent() {}
 }

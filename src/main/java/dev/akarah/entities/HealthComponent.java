@@ -1,6 +1,8 @@
-package dev.akarah.entities.types;
+package dev.akarah.entities;
 
-public class HealthComponent {
+import dev.akarah.component.MutableComponent;
+
+public class HealthComponent implements MutableComponent<HealthComponent, Entity, EntityComponent> {
     double health;
     double maxHealth;
 
@@ -23,5 +25,20 @@ public class HealthComponent {
 
     public HealthComponent maxHealth(double maxHealth) {
         return new HealthComponent(health, maxHealth);
+    }
+
+    @Override
+    public void set(Entity holder, HealthComponent value) {
+        holder.health = value;
+    }
+
+    @Override
+    public HealthComponent get(Entity holder) {
+        return holder.health;
+    }
+
+    @Override
+    public boolean isPresent(Entity holder) {
+        return holder.health != null;
     }
 }

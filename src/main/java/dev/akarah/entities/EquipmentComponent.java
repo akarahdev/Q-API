@@ -1,8 +1,10 @@
-package dev.akarah.entities.types;
+package dev.akarah.entities;
 
+import dev.akarah.component.AbstractComponent;
+import dev.akarah.component.MutableComponent;
 import dev.akarah.item.Item;
 
-public class EquipmentComponent {
+public class EquipmentComponent implements MutableComponent<EquipmentComponent, Entity, EntityComponent> {
     Item helmet;
     Item chestplate;
     Item leggings;
@@ -66,5 +68,20 @@ public class EquipmentComponent {
 
     public EquipmentComponent offHand(Item offHand) {
         return new EquipmentComponent(helmet, chestplate, leggings, boots, mainHand, offHand);
+    }
+
+    @Override
+    public void set(Entity holder, EquipmentComponent value) {
+        holder.equipment = value;
+    }
+
+    @Override
+    public EquipmentComponent get(Entity holder) {
+        return holder.equipment;
+    }
+
+    @Override
+    public boolean isPresent(Entity holder) {
+        return holder.equipment != null;
     }
 }
