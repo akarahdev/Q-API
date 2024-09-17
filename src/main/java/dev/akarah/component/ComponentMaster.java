@@ -1,8 +1,7 @@
 package dev.akarah.component;
 
 public abstract class ComponentMaster<
-        O,
-        H extends ComponentHolder<O, H, M>,
-        M extends ComponentMaster<O, H, M>
+        H extends ComponentHolder<H, M>,
+        M extends ComponentMaster<H, M>
         > {
 }

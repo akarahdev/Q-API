@@ -1,17 +1,18 @@
 package dev.akarah.component;
 
 public abstract class ComponentHolder<
-        Output,
-        Holder extends ComponentHolder<Output, Holder, Master>,
-        Master extends ComponentMaster<Output, Holder, Master>
+        Holder extends ComponentHolder<Holder, Master>,
+        Master extends ComponentMaster<Holder, Master>
         > {
 
-    public <T> T component(Component<T, Output, Holder, Master> component) {
+    public <T> T component(AbstractComponent<T, Holder, Master> component) {
         return component.get((Holder) this);
     }
 
-    public <T> Holder component(Component<T, Output, Holder, Master> component, T value) {
+    public <T> Holder component(MutableComponent<T, Holder, Master> component, T value) {
         component.set((Holder) this, value);
         return (Holder) this;
     }
+
+    public abstract Holder copy();
 }

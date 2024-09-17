@@ -1,32 +1,16 @@
 package dev.akarah.item;
 
+import dev.akarah.component.ComponentMaster;
 import dev.akarah.datatypes.server.Identifier;
-import dev.akarah.item.components.DamageComponent;
 import dev.akarah.meta.ApiUsage;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class ItemComponent<T> {
-    public static ItemComponent<String> ITEM_NAME = new ItemComponent<>(
-        Identifier.of("minecraft:item_name"));
-    public static ItemComponent<String> DISPLAY_NAME = new ItemComponent<>(
-        Identifier.of("minecraft:display_name"));
-    public static ItemComponent<List<String>> LORE = new ItemComponent<>(
-        Identifier.of("minecraft:lore"));
-    public static ItemComponent<DamageComponent> DAMAGE = new ItemComponent<>(
-        Identifier.of("minecraft:damage"));
-    public static ItemComponent<HashMap<String, Object>> CUSTOM_DATA = new ItemComponent<>(
-        Identifier.of("minecraft:custom_data"));
-    Identifier<?> internalName;
+public class ItemComponent extends ComponentMaster<Item, Item, ItemComponent> {
+    public static DamageComponent DAMAGE = new DamageComponent();
+    public static CustomDataComponent CUSTOM_DATA = new CustomDataComponent();
+    public static ItemNameComponent ITEM_NAME = new ItemNameComponent();
 
-    @ApiUsage.Unsafe
-    public ItemComponent(Identifier<?> internalName) {
-        this.internalName = internalName;
-    }
-
-    @Override
-    public int hashCode() {
-        return this.internalName.hashCode();
-    }
+    private ItemComponent() {}
 }
