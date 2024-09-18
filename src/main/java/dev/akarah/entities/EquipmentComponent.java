@@ -72,16 +72,16 @@ public class EquipmentComponent implements MutableComponent<EquipmentComponent, 
 
     @Override
     public void set(Entity holder, EquipmentComponent value) {
-        holder.equipment = value;
+        holder.unsafe().equipment = value;
     }
 
     @Override
     public EquipmentComponent get(Entity holder) {
-        return holder.equipment;
+        return holder.unsafe().equipment;
     }
 
     @Override
     public boolean isPresent(Entity holder) {
-        return holder.equipment != null;
+        return holder.unsafe().equipment != null;
     }
 }

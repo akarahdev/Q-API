@@ -29,16 +29,16 @@ public class HealthComponent implements MutableComponent<HealthComponent, Entity
 
     @Override
     public void set(Entity holder, HealthComponent value) {
-        holder.health = value;
+        holder.unsafe().health = value;
     }
 
     @Override
     public HealthComponent get(Entity holder) {
-        return holder.health;
+        return holder.unsafe().health;
     }
 
     @Override
     public boolean isPresent(Entity holder) {
-        return holder.health != null;
+        return holder.unsafe().health != null;
     }
 }

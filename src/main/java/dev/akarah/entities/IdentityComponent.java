@@ -10,6 +10,6 @@ public interface IdentityComponent extends AbstractComponent<IdentityComponent, 
 
     @Override
     default IdentityComponent get(Entity holder) {
-        return holder.identity;
+        return holder.unsafe().identity;
     }
 }

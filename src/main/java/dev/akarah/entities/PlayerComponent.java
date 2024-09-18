@@ -8,6 +8,6 @@ public interface PlayerComponent extends AbstractComponent<PlayerComponent, Enti
 
     @Override
     default PlayerComponent get(Entity holder) {
-        return holder.player;
+        return holder.unsafe().player;
     }
 }

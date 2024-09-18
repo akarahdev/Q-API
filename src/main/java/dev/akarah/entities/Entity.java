@@ -4,21 +4,29 @@ import dev.akarah.component.AbstractComponent;
 import dev.akarah.component.ComponentHolder;
 
 public abstract class Entity implements ComponentHolder<Entity, EntityComponent> {
-    EntityType entityType;
+    public static class UnsafeView {
+        public EntityType entityType;
 
-    EquipmentComponent equipment;
-    HealthComponent health;
-    LocationComponent location;
+        public EquipmentComponent equipment;
+        public HealthComponent health;
+        public LocationComponent location;
 
-    IdentityComponent identity;
-    PlayerComponent player;
+        public IdentityComponent identity;
+        public PlayerComponent player;
+    }
+
+    UnsafeView unsafeView;
 
     public EntityType entityType() {
-        return this.entityType;
+        return this.unsafe().entityType;
     }
 
     @Override
     public Entity copy() {
         return this;
+    }
+
+    public UnsafeView unsafe() {
+        return this.unsafeView;
     }
 }

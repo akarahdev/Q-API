@@ -31,16 +31,16 @@ public class LocationComponent implements MutableComponent<LocationComponent, En
 
     @Override
     public void set(Entity holder, LocationComponent value) {
-        holder.location = value;
+        holder.unsafe().location = value;
     }
 
     @Override
     public LocationComponent get(Entity holder) {
-        return holder.location;
+        return holder.unsafe().location;
     }
 
     @Override
     public boolean isPresent(Entity holder) {
-        return holder.location != null;
+        return holder.unsafe().location != null;
     }
 }
