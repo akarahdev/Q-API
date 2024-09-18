@@ -15,7 +15,7 @@ public abstract class Entity implements ComponentHolder<Entity, EntityComponent>
         public PlayerComponent player;
     }
 
-    UnsafeView unsafeView;
+    UnsafeView unsafeView = new UnsafeView();
 
     public EntityType entityType() {
         return this.unsafe().entityType;
