@@ -3,7 +3,7 @@ package dev.akarah.item;
 import dev.akarah.component.MutableComponent;
 import dev.akarah.datatypes.nbt.NbtElement;
 
-public class CustomDataComponent extends MutableComponent<CustomDataComponent, Item, ItemComponent> {
+public class CustomDataComponent implements MutableComponent<CustomDataComponent, Item, ItemComponent> {
     NbtElement.CompoundValue compound;
 
     boolean hasTag(String tag) {

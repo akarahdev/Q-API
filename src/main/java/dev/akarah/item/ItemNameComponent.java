@@ -2,7 +2,7 @@ package dev.akarah.item;
 
 import dev.akarah.component.MutableComponent;
 
-public class ItemNameComponent extends MutableComponent<String, Item, ItemComponent> {
+public class ItemNameComponent implements MutableComponent<String, Item, ItemComponent> {
 
     @Override
     public void set(Item holder, String value) {

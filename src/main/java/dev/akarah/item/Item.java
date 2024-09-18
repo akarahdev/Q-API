@@ -6,7 +6,7 @@ import dev.akarah.datatypes.server.Identifier;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
-public class Item extends ComponentHolder<Item, ItemComponent> {
+public class Item implements ComponentHolder<Item, ItemComponent> {
     CustomDataComponent customDataComponent;
     DamageComponent damageComponent;
     String itemName;
