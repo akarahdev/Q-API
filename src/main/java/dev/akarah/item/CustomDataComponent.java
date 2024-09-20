@@ -3,8 +3,10 @@ package dev.akarah.item;
 import dev.akarah.component.MutableComponent;
 import dev.akarah.datatypes.nbt.NbtElement;
 
+import java.util.HashMap;
+
 public class CustomDataComponent implements MutableComponent<CustomDataComponent, Item, ItemComponent> {
-    NbtElement.CompoundValue compound;
+    NbtElement.CompoundValue compound = new NbtElement.CompoundValue(new HashMap<>());
 
     public boolean hasTag(String tag) {
         return compound.value().containsKey(tag);
