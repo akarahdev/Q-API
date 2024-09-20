@@ -33,4 +33,13 @@ public enum Attribute {
     SWEEPING_DAMAGE_RATIO,
     TEMPT_RANGE,
     WATER_MOVEMENT_EFFEICIENCY;
+
+    public static void printAttributes() {
+        for(var value : Attribute.values()) {
+            System.out.println(
+                "public static SimpleAttribute {name} = new SimpleAttribute(Attribute.{name});"
+                    .replace("{name}", value.name())
+            );
+        }
+    }
 }
