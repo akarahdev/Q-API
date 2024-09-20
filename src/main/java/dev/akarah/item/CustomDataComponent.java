@@ -6,19 +6,19 @@ import dev.akarah.datatypes.nbt.NbtElement;
 public class CustomDataComponent implements MutableComponent<CustomDataComponent, Item, ItemComponent> {
     NbtElement.CompoundValue compound;
 
-    boolean hasTag(String tag) {
+    public boolean hasTag(String tag) {
         return compound.value().containsKey(tag);
     }
 
-    NbtElement.CompoundValue structure() {
+    public NbtElement.CompoundValue structure() {
         return this.compound;
     }
 
-    NbtElement get(String tag) {
+    public NbtElement get(String tag) {
         return compound.value().get(tag);
     }
 
-    void put(String tag, NbtElement value) {
+    public void put(String tag, NbtElement value) {
         compound.value().put(tag, value);
     }
 
