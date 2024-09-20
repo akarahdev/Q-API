@@ -3,11 +3,10 @@ package dev.akarah.datatypes.attributes;
 import dev.akarah.component.ComponentHolder;
 
 import java.util.EnumMap;
-import java.util.HashMap;
 
 public class AttributeContainer implements ComponentHolder<
         AttributeContainer,
-        Attributes> {
+    BuiltInAttributes> {
     public EnumMap<Attribute, Double> attributes;
 
     @Override

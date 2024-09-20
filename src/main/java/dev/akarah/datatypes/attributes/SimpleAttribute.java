@@ -5,7 +5,7 @@ import dev.akarah.component.MutableComponent;
 public class SimpleAttribute implements MutableComponent<
         Double,
         AttributeContainer,
-        Attributes> {
+    BuiltInAttributes> {
     Attribute key;
 
     public SimpleAttribute(Attribute key) {

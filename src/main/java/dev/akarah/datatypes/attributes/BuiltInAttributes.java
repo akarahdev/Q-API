@@ -2,9 +2,9 @@ package dev.akarah.datatypes.attributes;
 
 import dev.akarah.component.ComponentMaster;
 
-public class Attributes implements ComponentMaster<
+public class BuiltInAttributes implements ComponentMaster<
         AttributeContainer,
-        Attributes> {
+    BuiltInAttributes> {
     public static SimpleAttribute ARMOR = new SimpleAttribute(Attribute.ARMOR);
     public static SimpleAttribute ARMOR_TOUGHNESS = new SimpleAttribute(Attribute.ARMOR_TOUGHNESS);
     public static SimpleAttribute ATTACK_DAMAGE = new SimpleAttribute(Attribute.ATTACK_DAMAGE);
