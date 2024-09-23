@@ -1,6 +1,5 @@
 package dev.akarah;
 
-import dev.akarah.datatypes.Generator;
 import dev.akarah.entities.Entity;
 import dev.akarah.event.DynamicRegistryListener;
 import dev.akarah.event.PlayerEventListener;
@@ -88,9 +87,6 @@ public class MinecraftServer {
         MinecraftServer.backingInstance.runSync(task);
     }
 
-    public static Generator generator() {
-        return MinecraftServer.backingInstance.generator();
-    }
     public static class ServerListeners {
         public List<EventPair<DynamicRegistryListener>> dynamicRegistryListeners() {
             return MinecraftServer.dynamicRegistryListeners;
