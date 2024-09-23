@@ -4,6 +4,8 @@ import dev.akarah.component.AbstractComponent;
 import dev.akarah.component.MutableComponent;
 import dev.akarah.item.Item;
 
+import java.util.Optional;
+
 public class EquipmentComponent implements MutableComponent<EquipmentComponent, Entity, EntityComponent> {
     Item helmet;
     Item chestplate;
@@ -76,8 +78,8 @@ public class EquipmentComponent implements MutableComponent<EquipmentComponent, 
     }
 
     @Override
-    public EquipmentComponent get(Entity holder) {
-        return holder.unsafe().equipment;
+    public Optional<EquipmentComponent> get(Entity holder) {
+        return Optional.ofNullable(holder.unsafe().equipment);
     }
 
     @Override

@@ -1,11 +1,13 @@
 package dev.akarah.component;
 
+import java.util.Optional;
+
 public interface ComponentHolder<
         Holder extends ComponentHolder<Holder, Master>,
         Master extends ComponentMaster<Holder, Master>
         > {
 
-    default <T> T component(AbstractComponent<T, Holder, Master> component) {
+    default <T> Optional<T> component(AbstractComponent<T, Holder, Master> component) {
         return component.get((Holder) this);
     }
 

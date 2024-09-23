@@ -5,7 +5,5 @@ import dev.akarah.meta.ApiUsage;
 
 @ApiUsage.Experimental
 public interface StaticRegistryListener {
-    default void test(Entity entity) {
 
-    }
 }

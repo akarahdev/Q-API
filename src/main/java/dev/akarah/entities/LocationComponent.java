@@ -4,6 +4,8 @@ import dev.akarah.component.MutableComponent;
 import dev.akarah.datatypes.server.Location;
 import dev.akarah.dimension.Dimension;
 
+import java.util.Optional;
+
 public class LocationComponent implements MutableComponent<LocationComponent, Entity, EntityComponent> {
     Dimension dimension;
     Location location;
@@ -35,8 +37,8 @@ public class LocationComponent implements MutableComponent<LocationComponent, En
     }
 
     @Override
-    public LocationComponent get(Entity holder) {
-        return holder.unsafe().location;
+    public Optional<LocationComponent> get(Entity holder) {
+        return Optional.ofNullable(holder.unsafe().location);
     }
 
     @Override

@@ -2,6 +2,7 @@ package dev.akarah.entities;
 
 import dev.akarah.component.AbstractComponent;
 
+import java.util.Optional;
 import java.util.UUID;
 
 public interface IdentityComponent extends AbstractComponent<IdentityComponent, Entity, EntityComponent> {
@@ -9,7 +10,7 @@ public interface IdentityComponent extends AbstractComponent<IdentityComponent, 
     UUID uuid();
 
     @Override
-    default IdentityComponent get(Entity holder) {
-        return holder.unsafe().identity;
+    default Optional<IdentityComponent> get(Entity holder) {
+        return Optional.ofNullable(holder.unsafe().identity);
     }
 }

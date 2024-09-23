@@ -2,6 +2,8 @@ package dev.akarah.item;
 
 import dev.akarah.component.MutableComponent;
 
+import java.util.Optional;
+
 public class ItemNameComponent implements MutableComponent<String, Item, ItemComponent> {
 
     @Override
@@ -10,8 +12,8 @@ public class ItemNameComponent implements MutableComponent<String, Item, ItemCom
     }
 
     @Override
-    public String get(Item holder) {
-        return holder.itemName;
+    public Optional<String> get(Item holder) {
+        return Optional.ofNullable(holder.itemName);
     }
 
     @Override

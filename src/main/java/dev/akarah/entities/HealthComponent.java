@@ -2,6 +2,8 @@ package dev.akarah.entities;
 
 import dev.akarah.component.MutableComponent;
 
+import java.util.Optional;
+
 public class HealthComponent implements MutableComponent<HealthComponent, Entity, EntityComponent> {
     double health;
     double maxHealth;
@@ -33,8 +35,8 @@ public class HealthComponent implements MutableComponent<HealthComponent, Entity
     }
 
     @Override
-    public HealthComponent get(Entity holder) {
-        return holder.unsafe().health;
+    public Optional<HealthComponent> get(Entity holder) {
+        return Optional.ofNullable(holder.unsafe().health);
     }
 
     @Override

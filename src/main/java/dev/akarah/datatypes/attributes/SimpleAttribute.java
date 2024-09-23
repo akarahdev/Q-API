@@ -2,6 +2,8 @@ package dev.akarah.datatypes.attributes;
 
 import dev.akarah.component.MutableComponent;
 
+import java.util.Optional;
+
 public class SimpleAttribute implements MutableComponent<
         Double,
         AttributeContainer,
@@ -18,8 +20,8 @@ public class SimpleAttribute implements MutableComponent<
     }
 
     @Override
-    public Double get(AttributeContainer holder) {
-        return 0.0;
+    public Optional<Double> get(AttributeContainer holder) {
+        return Optional.ofNullable(holder.attributes.getOrDefault(this.key, null));
     }
 
     @Override

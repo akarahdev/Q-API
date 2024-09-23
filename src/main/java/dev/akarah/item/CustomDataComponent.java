@@ -4,6 +4,7 @@ import dev.akarah.component.MutableComponent;
 import dev.akarah.datatypes.nbt.NbtElement;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 public class CustomDataComponent implements MutableComponent<CustomDataComponent, Item, ItemComponent> {
     NbtElement.CompoundValue compound = new NbtElement.CompoundValue(new HashMap<>());
@@ -30,8 +31,8 @@ public class CustomDataComponent implements MutableComponent<CustomDataComponent
     }
 
     @Override
-    public CustomDataComponent get(Item holder) {
-        return holder.customDataComponent;
+    public Optional<CustomDataComponent> get(Item holder) {
+        return Optional.ofNullable(holder.customDataComponent);
     }
 
     @Override
