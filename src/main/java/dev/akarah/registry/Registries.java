@@ -4,6 +4,7 @@ import dev.akarah.dimension.BlockType;
 import dev.akarah.dimension.Dimension;
 import dev.akarah.datatypes.server.Identifier;
 import dev.akarah.entities.EntityType;
+import dev.akarah.events.Event;
 import dev.akarah.item.Item;
 
 import java.util.Optional;
@@ -20,7 +21,7 @@ public class Registries {
         = Identifier.of("minecraft:dimension");
     public static Identifier<Registry<BlockType>> BLOCK_TYPES
         = Identifier.of("minecraft:block");
-    public static Identifier<Registry<Consumer<?>>> EVENTS
+    public static Identifier<Registry<Event>> EVENTS
             = Identifier.of("q_mc:events");
 
     public static<T> Optional<Registry<T>> findRegistry(Identifier<Registry<T>> registryResourceKey) {
