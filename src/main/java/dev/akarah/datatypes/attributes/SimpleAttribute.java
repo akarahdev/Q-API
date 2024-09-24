@@ -5,8 +5,8 @@ import dev.akarah.component.MutableComponent;
 import java.util.Optional;
 
 public class SimpleAttribute implements MutableComponent<
-        Double,
-        AttributeContainer,
+    Double,
+    AttributeContainer,
     BuiltInAttributes> {
     Attribute key;
 

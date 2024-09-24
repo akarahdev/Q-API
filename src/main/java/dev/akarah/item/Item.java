@@ -3,9 +3,7 @@ package dev.akarah.item;
 import dev.akarah.component.ComponentHolder;
 import dev.akarah.datatypes.server.Identifier;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class Item implements ComponentHolder<Item, ItemComponent> {
     CustomDataComponent customDataComponent;

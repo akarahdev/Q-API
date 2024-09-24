@@ -5,7 +5,7 @@ import dev.akarah.component.ComponentHolder;
 import java.util.EnumMap;
 
 public class AttributeContainer implements ComponentHolder<
-        AttributeContainer,
+    AttributeContainer,
     BuiltInAttributes> {
     public EnumMap<Attribute, Double> attributes;
 

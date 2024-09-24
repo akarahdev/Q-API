@@ -20,7 +20,7 @@ public class LocationComponent implements MutableComponent<LocationComponent, En
     }
 
     public LocationComponent dimension(Dimension dimension) {
-        return new LocationComponent(dimension,location);
+        return new LocationComponent(dimension, location);
     }
 
     public Location location() {
@@ -28,7 +28,7 @@ public class LocationComponent implements MutableComponent<LocationComponent, En
     }
 
     public LocationComponent location(Location location) {
-        return new LocationComponent(dimension,location);
+        return new LocationComponent(dimension, location);
     }
 
     @Override

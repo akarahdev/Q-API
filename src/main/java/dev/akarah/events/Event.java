@@ -5,7 +5,6 @@ import dev.akarah.events.components.EventData;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class Event {
     List<EventListener> listeners = new ArrayList<>();
@@ -20,7 +19,7 @@ public class Event {
     }
 
     public void invoke(EventData eventData) {
-        for(var listener : this.listeners) {
+        for (var listener : this.listeners) {
             listener.run(eventData);
         }
     }

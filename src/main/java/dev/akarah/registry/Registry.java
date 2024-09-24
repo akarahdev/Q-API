@@ -27,6 +27,7 @@ public interface Registry<T> {
 
     /**
      * Fetches a list of all of the keys present in the registry.
+     *
      * @return List of all of the present keys.
      */
     List<Identifier<T>> keys();
@@ -35,6 +36,7 @@ public interface Registry<T> {
      * Parallels {@link Registry#lookup(Identifier)}, but is not type safe.
      * This should not be used unless you are developing an internal API, as this has undefined behavior
      * when a key of another type is passed in.
+     *
      * @param key The key to look up in the registry.
      * @return The value looked up from the registry.
      */

@@ -10,21 +10,10 @@ public class Block {
     BlockType blockType;
     HashMap<BlockComponent<Object>, Object> components = new HashMap<>();
 
-    private HashMap<BlockComponent<Object>, Object> cloneComponents() {
-        var hm = new HashMap<BlockComponent<Object>, Object>();
-        for (var key : this.components.keySet())
-            hm.put(key, this.components.get(key));
-        return hm;
-    }
-
     private Block(Block oldBlock, Consumer<Block> modification) {
         this.blockType = oldBlock.blockType;
         this.components = oldBlock.cloneComponents();
         modification.accept(this);
-    }
-
-    public BlockType blockType() {
-        return this.blockType;
     }
 
     public Block(BlockType blockType) {
@@ -43,11 +32,22 @@ public class Block {
         return Block.of(Identifier.of(identifierString));
     }
 
-    public<T> Block with(BlockComponent<T> component, T value) {
+    private HashMap<BlockComponent<Object>, Object> cloneComponents() {
+        var hm = new HashMap<BlockComponent<Object>, Object>();
+        for (var key : this.components.keySet())
+            hm.put(key, this.components.get(key));
+        return hm;
+    }
+
+    public BlockType blockType() {
+        return this.blockType;
+    }
+
+    public <T> Block with(BlockComponent<T> component, T value) {
         return new Block(this, block -> block.components.put((BlockComponent<Object>) component, value));
     }
 
-    public<T> T get(BlockComponent<T> component) {
+    public <T> T get(BlockComponent<T> component) {
         return (T) this.components.get(component);
     }
 }

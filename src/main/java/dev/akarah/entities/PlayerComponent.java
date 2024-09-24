@@ -6,6 +6,7 @@ import java.util.Optional;
 
 public interface PlayerComponent extends AbstractComponent<PlayerComponent, Entity, EntityComponent> {
     GUIComponent gui();
+
     InventoryComponent inventory();
 
     @Override

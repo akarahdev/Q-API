@@ -2,7 +2,6 @@ package dev.akarah.events.components;
 
 import dev.akarah.component.AbstractComponent;
 import dev.akarah.datatypes.server.Location;
-import dev.akarah.entities.Entity;
 
 import java.util.Optional;
 

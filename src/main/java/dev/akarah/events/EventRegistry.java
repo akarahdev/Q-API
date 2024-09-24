@@ -11,6 +11,7 @@ import java.util.Optional;
 public class EventRegistry implements Registry<Event> {
 
     public static HashMap<Identifier<Event>, Event> EVENTS = new HashMap<>();
+
     @Override
     public Optional<Event> lookup(Identifier<Event> key) {
         return Optional.ofNullable(EVENTS.getOrDefault(key, null));

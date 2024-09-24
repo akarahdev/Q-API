@@ -6,7 +6,9 @@ import java.util.stream.Collectors;
 
 public sealed interface NbtElement {
     String toJson();
+
     String toStringifiedNbt();
+
     NbtTag tag();
 
     record Byte(byte value) implements NbtElement {
@@ -119,7 +121,7 @@ public sealed interface NbtElement {
 
         @Override
         public String toStringifiedNbt() {
-            return '"' + this.value.replace("\"", "\\\"")+ '"';
+            return '"' + this.value.replace("\"", "\\\"") + '"';
         }
 
         @Override

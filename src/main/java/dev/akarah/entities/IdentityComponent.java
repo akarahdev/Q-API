@@ -7,6 +7,7 @@ import java.util.UUID;
 
 public interface IdentityComponent extends AbstractComponent<IdentityComponent, Entity, EntityComponent> {
     int temporaryId();
+
     UUID uuid();
 
     @Override

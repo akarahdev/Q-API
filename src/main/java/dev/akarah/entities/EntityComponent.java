@@ -46,5 +46,6 @@ public class EntityComponent implements ComponentMaster<Entity, EntityComponent>
         }
     };
 
-    private EntityComponent() {}
+    private EntityComponent() {
+    }
 }

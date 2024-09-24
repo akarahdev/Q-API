@@ -2,10 +2,7 @@ package dev.akarah.item;
 
 import dev.akarah.component.ComponentMaster;
 import dev.akarah.component.MutableComponent;
-import dev.akarah.datatypes.server.Identifier;
-import dev.akarah.meta.ApiUsage;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +10,9 @@ public class ItemComponent implements ComponentMaster<Item, ItemComponent> {
     public static DamageComponent DAMAGE = new DamageComponent();
     public static CustomDataComponent CUSTOM_DATA = new CustomDataComponent();
     public static ItemNameComponent ITEM_NAME = new ItemNameComponent();
+
+    private ItemComponent() {
+    }
 
     public static class ItemLoreComponent implements MutableComponent<List<String>, Item, ItemComponent> {
         @Override
@@ -68,6 +68,4 @@ public class ItemComponent implements ComponentMaster<Item, ItemComponent> {
             return holder.damageComponent != null;
         }
     }
-
-    private ItemComponent() {}
 }

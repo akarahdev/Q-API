@@ -2,7 +2,6 @@ package dev.akarah.meta;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
 
 public interface ApiUsage {
     /**
@@ -10,14 +9,16 @@ public interface ApiUsage {
      * This means this part of the API may be changed or deleted at any time with no notice or warning.
      */
     @Retention(RetentionPolicy.RUNTIME)
-    @interface Experimental {}
+    @interface Experimental {
+    }
 
     /**
      * This represents a part of the API that should exclusively be used by implementations.
      * Using these incorrectly may lead to undefined behavior.
      */
     @Retention(RetentionPolicy.RUNTIME)
-    @interface Internal {}
+    @interface Internal {
+    }
 
     /**
      * This represents a part of the API that contains undefined behavior.
@@ -28,5 +29,6 @@ public interface ApiUsage {
      * </code>
      */
     @Retention(RetentionPolicy.RUNTIME)
-    @interface Unsafe {}
+    @interface Unsafe {
+    }
 }

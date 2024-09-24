@@ -1,7 +1,5 @@
 package dev.akarah.events;
 
-import dev.akarah.datatypes.event.PlayerConnectEvent;
-import dev.akarah.datatypes.event.PlayerDisconnectEvent;
 import dev.akarah.datatypes.server.Identifier;
 
 public class BuiltInEvents {

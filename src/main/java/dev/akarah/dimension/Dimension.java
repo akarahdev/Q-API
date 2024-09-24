@@ -1,7 +1,7 @@
 package dev.akarah.dimension;
 
-import dev.akarah.datatypes.server.Location;
 import dev.akarah.datatypes.server.Identifier;
+import dev.akarah.datatypes.server.Location;
 import dev.akarah.entities.Entity;
 import dev.akarah.entities.EntityType;
 
@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 public interface Dimension {
     /**
      * Returns the name of the dimension.
+     *
      * @return The name of the dimension.
      */
     Identifier<Dimension> name();

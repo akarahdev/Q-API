@@ -1,11 +1,8 @@
 package dev.akarah.events.components;
 
-import dev.akarah.component.AbstractComponent;
 import dev.akarah.component.ComponentHolder;
 import dev.akarah.datatypes.server.Location;
 import dev.akarah.entities.Entity;
-
-import java.util.HashMap;
 
 public class EventData implements ComponentHolder<EventData, EventComponents> {
 
@@ -16,7 +13,8 @@ public class EventData implements ComponentHolder<EventData, EventComponents> {
     boolean isCancellable;
     boolean cancelled;
 
-    private EventData() {}
+    private EventData() {
+    }
 
     public static EventData empty() {
         return new EventData();
@@ -25,11 +23,12 @@ public class EventData implements ComponentHolder<EventData, EventComponents> {
     @Override
     public EventData copy() {
         var ed = EventData.empty();
-        for(var field : ed.getClass().getFields()) {
+        for (var field : ed.getClass().getFields()) {
             field.setAccessible(true);
             try {
                 field.set(ed, field.get(this));
-            } catch (IllegalAccessException ignored) {}
+            } catch (IllegalAccessException ignored) {
+            }
         }
         return ed;
     }

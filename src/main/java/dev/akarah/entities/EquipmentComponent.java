@@ -1,6 +1,5 @@
 package dev.akarah.entities;
 
-import dev.akarah.component.AbstractComponent;
 import dev.akarah.component.MutableComponent;
 import dev.akarah.item.Item;
 

@@ -1,11 +1,11 @@
 package dev.akarah;
 
+import dev.akarah.datatypes.event.EventPair;
 import dev.akarah.entities.Entity;
 import dev.akarah.event.DynamicRegistryListener;
 import dev.akarah.event.PlayerEventListener;
 import dev.akarah.event.StaticRegistryListener;
 import dev.akarah.meta.ApiUsage;
-import dev.akarah.datatypes.event.EventPair;
 
 import java.util.ArrayList;
 import java.util.List;
