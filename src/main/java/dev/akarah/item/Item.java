@@ -4,12 +4,14 @@ import dev.akarah.component.ComponentHolder;
 import dev.akarah.datatypes.server.Identifier;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.function.Consumer;
 
 public class Item implements ComponentHolder<Item, ItemComponent> {
     CustomDataComponent customDataComponent;
-    DamageComponent damageComponent;
+    ItemComponent.DamageComponent damageComponent;
     String itemName;
+    List<String> itemLore;
 
     Identifier<Item> itemType;
     int amount;
