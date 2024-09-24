@@ -7,6 +7,7 @@ import dev.akarah.entities.EntityType;
 import dev.akarah.item.Item;
 
 import java.util.Optional;
+import java.util.function.Consumer;
 
 public class Registries {
     public static Registry<Registry<?>> REGISTRIES;
@@ -19,6 +20,8 @@ public class Registries {
         = Identifier.of("minecraft:dimension");
     public static Identifier<Registry<BlockType>> BLOCK_TYPES
         = Identifier.of("minecraft:block");
+    public static Identifier<Registry<Consumer<?>>> EVENTS
+            = Identifier.of("q_mc:events");
 
     public static<T> Optional<Registry<T>> findRegistry(Identifier<Registry<T>> registryResourceKey) {
         // safety: type is guaranteed by generics at compile-time
