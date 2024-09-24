@@ -7,6 +7,6 @@ public interface AbstractComponent<
         Holder extends ComponentHolder<Holder, Master>,
         Master extends ComponentMaster<Holder, Master>
         > {
-    public Optional<Type> get(Holder holder);
-    public boolean isPresent(Holder holder);
+    Optional<Type> get(Holder holder);
+    boolean isPresent(Holder holder);
 }

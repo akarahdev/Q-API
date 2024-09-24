@@ -7,11 +7,15 @@ public interface ComponentHolder<
         Master extends ComponentMaster<Holder, Master>
         > {
 
-    default <T> Optional<T> component(AbstractComponent<T, Holder, Master> component) {
+    default <T> Optional<T> get(AbstractComponent<T, Holder, Master> component) {
         return component.get((Holder) this);
     }
 
-    default <T> Holder component(MutableComponent<T, Holder, Master> component, T value) {
+    default <T> T getOrNull(AbstractComponent<T, Holder, Master> component) {
+        return this.get(component).orElse(null);
+    }
+
+    default <T> Holder set(MutableComponent<T, Holder, Master> component, T value) {
         component.set((Holder) this, value);
         return (Holder) this;
     }

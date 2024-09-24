@@ -2,6 +2,7 @@ package dev.akarah.event;
 
 import dev.akarah.datatypes.server.Location;
 import dev.akarah.entities.Entity;
+import dev.akarah.entities.EntityComponent;
 import dev.akarah.entities.PlayerComponent;
 import dev.akarah.meta.ApiUsage;
 
@@ -14,6 +15,7 @@ public interface PlayerEventListener {
      *               Guaranteed to have an {@link PlayerComponent}
      */
     default void onConnect(Entity player) {
+
     }
 
     /**
