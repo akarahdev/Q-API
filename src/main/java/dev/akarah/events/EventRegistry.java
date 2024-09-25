@@ -14,7 +14,10 @@ public class EventRegistry implements Registry<Event> {
 
     @Override
     public Optional<Event> lookup(Identifier<Event> key) {
-        return Optional.ofNullable(EVENTS.getOrDefault(key, null));
+        if(!EVENTS.containsKey(key)) {
+            EVENTS.put(key, new Event());
+        }
+        return Optional.of(EVENTS.get(key));
     }
 
     @Override

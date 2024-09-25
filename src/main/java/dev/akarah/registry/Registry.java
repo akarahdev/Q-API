@@ -5,6 +5,7 @@ import dev.akarah.meta.ApiUsage;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 
 public interface Registry<T> {
     /**
@@ -44,5 +45,11 @@ public interface Registry<T> {
     @ApiUsage.Unsafe
     default T lookupUnsafe(Identifier<?> key) {
         return this.lookup((Identifier<T>) key).orElse(null);
+    }
+
+    default void map(Identifier<T> key, Function<T, T> mappingFunction) {
+        this.lookup(key).ifPresent(value -> {
+            this.put(key, mappingFunction.apply(value));
+        });
     }
 }
