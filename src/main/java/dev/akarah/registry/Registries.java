@@ -12,15 +12,15 @@ import java.util.Optional;
 public class Registries {
     public static Registry<Registry<?>> REGISTRIES;
 
-    public static Identifier<Registry<Item>> ITEM
+    public static final Identifier<Registry<Item>> ITEM
         = Identifier.of("minecraft:item");
-    public static Identifier<Registry<EntityType>> ENTITY_TYPES
+    public static final Identifier<Registry<EntityType>> ENTITY_TYPES
         = Identifier.of("minecraft:entity");
-    public static Identifier<Registry<Dimension>> DIMENSION
+    public static final Identifier<Registry<Dimension>> DIMENSION
         = Identifier.of("minecraft:dimension");
-    public static Identifier<Registry<BlockType>> BLOCK_TYPES
+    public static final Identifier<Registry<BlockType>> BLOCK_TYPES
         = Identifier.of("minecraft:block");
-    public static Identifier<Registry<Event>> EVENTS
+    public static final Identifier<Registry<Event>> EVENTS
         = Identifier.of("q_mc:events");
 
     public static <T> Optional<Registry<T>> findRegistry(Identifier<Registry<T>> registryResourceKey) {
