@@ -1,6 +1,5 @@
 package dev.akarah;
-
-import dev.akarah.datatypes.event.EventPair;
+api
 import dev.akarah.entities.Entity;
 import dev.akarah.meta.ApiUsage;
 
