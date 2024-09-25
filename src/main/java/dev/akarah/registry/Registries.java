@@ -9,7 +9,7 @@ import dev.akarah.item.Item;
 
 import java.util.Optional;
 
-public class Registries {
+public final class Registries {
     public static Registry<Registry<?>> REGISTRIES;
 
     public static final Identifier<Registry<Item>> ITEM
@@ -23,6 +23,21 @@ public class Registries {
     public static final Identifier<Registry<Event>> EVENTS
         = Identifier.of("q_mc:events");
 
+    public static Registry<Event> eventRegistry() {
+        return Registries.findRegistry(Registries.EVENTS).get();
+    }
+    public static Registry<Item> itemRegistry() {
+        return Registries.findRegistry(Registries.ITEM).get();
+    }
+    public static Registry<Dimension> dimensionRegistry() {
+        return Registries.findRegistry(Registries.DIMENSION).get();
+    }
+    public static Registry<BlockType> blockTypeRegistry() {
+        return Registries.findRegistry(Registries.BLOCK_TYPES).get();
+    }
+    public static Registry<EntityType> entityTypeRegistry() {
+        return Registries.findRegistry(Registries.ENTITY_TYPES).get();
+    }
     public static <T> Optional<Registry<T>> findRegistry(Identifier<Registry<T>> registryResourceKey) {
         // safety: type is guaranteed by generics at compile-time
         return Optional.ofNullable((Registry<T>) Registries.REGISTRIES.lookupUnsafe(registryResourceKey));
