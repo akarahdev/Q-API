@@ -32,4 +32,17 @@ public class EventData implements ComponentHolder<EventData, EventComponents> {
         }
         return ed;
     }
+
+    public static class Builder extends EventData {
+        private Builder() {}
+
+        public static Builder empty() {
+            return new Builder();
+        }
+
+        public Builder mainEntity(Entity mainEntity) {
+            this.mainEntity = mainEntity;
+            return this;
+        }
+    }
 }
