@@ -6,7 +6,7 @@ import dev.akarah.meta.ApiUsage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
-""
+
 public class MinecraftServer {
     static ServerInstance backingInstance;
     static List<ServerPlugin> plugins = new ArrayList<>();
