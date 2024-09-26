@@ -10,6 +10,8 @@ public class Item implements ComponentHolder<Item, ItemComponent> {
     ItemComponent.DamageComponent damageComponent;
     String itemName;
     List<String> itemLore;
+    ItemComponent.ItemRarity rarity;
+    int maxStackSize;
 
     Identifier<Item> itemType;
     int amount;

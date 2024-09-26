@@ -55,17 +55,74 @@ public class ItemComponent implements ComponentMaster<Item, ItemComponent> {
 
         @Override
         public void set(Item holder, DamageComponent value) {
-            holder.damageComponent = this;
+            holder.damageComponent = this.copy();
         }
 
         @Override
         public DamageComponent get(Item holder) {
-            return holder.damageComponent;
+            return holder.damageComponent.copy();
         }
 
         @Override
         public boolean isPresent(Item holder) {
             return holder.damageComponent != null;
+        }
+
+        public int damage() { return this.damage; }
+        public DamageComponent damage(int damage) { this.damage = damage; return this; }
+
+        public int maxDamage() { return this.damage; }
+        public DamageComponent maxDamage(int damage) { this.damage = damage; return this; }
+
+        public boolean unbreakable() { return this.unbreakable; }
+        public DamageComponent unbreakable(boolean unbreakable) { this.unbreakable = unbreakable; return this; }
+
+        public DamageComponent copy() {
+            return new DamageComponent()
+                .damage(this.damage)
+                .maxDamage(this.maxDamage)
+                .unbreakable(this.unbreakable);
+        }
+    }
+
+    public enum ItemRarity {
+        COMMON,
+        UNCOMMON,
+        RARE,
+        EPIC
+    }
+
+    public static class RarityComponent implements MutableComponent<ItemRarity, Item, ItemComponent> {
+        @Override
+        public void set(Item holder, ItemRarity value) {
+            holder.rarity = value;
+        }
+
+        @Override
+        public ItemRarity get(Item holder) {
+            return holder.rarity;
+        }
+
+        @Override
+        public boolean isPresent(Item holder) {
+            return holder.rarity != null;
+        }
+    }
+
+    public static class MaxStackSizeComponent implements MutableComponent<Integer, Item, ItemComponent> {
+        @Override
+        public void set(Item holder, Integer value) {
+            holder.maxStackSize = value;
+        }
+
+        @Override
+        public Integer get(Item holder) {
+            return holder.maxStackSize;
+        }
+
+        @Override
+        public boolean isPresent(Item holder) {
+            return true;
         }
     }
 }
