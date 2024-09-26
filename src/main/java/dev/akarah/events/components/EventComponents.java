@@ -8,4 +8,6 @@ public class EventComponents implements ComponentMaster<EventData, EventComponen
     public static AttackerComponent ATTACKER = new AttackerComponent();
     public static VictimComponent VICTIM = new VictimComponent();
     public static LocationComponent LOCATION = new LocationComponent();
+    public static DimensionComponent DIMENSION = new DimensionComponent();
+    public static OriginDimensionComponent ORIGIN_DIMENSION = new OriginDimensionComponent();
 }

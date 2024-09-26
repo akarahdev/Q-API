@@ -2,6 +2,7 @@ package dev.akarah.events.components;
 
 import dev.akarah.component.ComponentHolder;
 import dev.akarah.datatypes.server.Location;
+import dev.akarah.dimension.Dimension;
 import dev.akarah.entities.Entity;
 
 public class EventData implements ComponentHolder<EventData, EventComponents> {
@@ -12,6 +13,9 @@ public class EventData implements ComponentHolder<EventData, EventComponents> {
     Location location;
     boolean isCancellable;
     boolean cancelled;
+
+    Dimension fromDimension;
+    Dimension toDimension;
 
     private EventData() {
     }
@@ -42,6 +46,31 @@ public class EventData implements ComponentHolder<EventData, EventComponents> {
 
         public Builder mainEntity(Entity mainEntity) {
             this.mainEntity = mainEntity;
+            return this;
+        }
+
+        public Builder attacker(Entity attacker) {
+            this.attacker = attacker;
+            return this;
+        }
+
+        public Builder victim(Entity victim) {
+            this.victim = victim;
+            return this;
+        }
+
+        public Builder location(Location location) {
+            this.location = location;
+            return this;
+        }
+
+        public Builder fromDimension(Dimension fromDimension) {
+            this.fromDimension = fromDimension;
+            return this;
+        }
+
+        public Builder toDimension(Dimension toDimension) {
+            this.toDimension = toDimension;
             return this;
         }
     }
