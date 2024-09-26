@@ -1,13 +1,11 @@
 package dev.akarah.registry;
 
 import dev.akarah.datatypes.server.Identifier;
-import dev.akarah.dimension.BlockType;
+import dev.akarah.dimension.block.BlockType;
 import dev.akarah.dimension.Dimension;
 import dev.akarah.entities.EntityType;
 import dev.akarah.events.Event;
 import dev.akarah.item.Item;
-
-import java.util.Optional;
 
 public final class Registries {
     public static Registry<Registry<?>> REGISTRIES;

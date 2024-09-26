@@ -2,6 +2,7 @@ package dev.akarah.dimension;
 
 import dev.akarah.datatypes.server.Identifier;
 import dev.akarah.datatypes.server.Location;
+import dev.akarah.dimension.block.Block;
 import dev.akarah.entities.Entity;
 import dev.akarah.entities.EntityType;
 
