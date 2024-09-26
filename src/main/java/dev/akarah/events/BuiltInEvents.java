@@ -21,4 +21,29 @@ public class BuiltInEvents {
             = Identifier.of("minecraft:start_sprinting");
     public static final Identifier<Event> STOP_SPRINTING
             = Identifier.of("minecraft:stop_sprinting");
+
+    public static final Identifier<Event> IMPOSSIBLE
+        = Identifier.of("minecraft:impossible");
+    public static final Identifier<Event> PLAYER_KILLED_ENTITY
+        = Identifier.of("minecraft:player_killed_entity");
+    public static final Identifier<Event> ENTITY_KILLED_PLAYER
+        = Identifier.of("minecraft:entity_killed_player");
+    public static final Identifier<Event> ENTITY_ENTER_BLOCK
+        = Identifier.of("minecraft:enter_block");
+    public static final Identifier<Event> PLAYER_INVENTORY_CHANGED
+        = Identifier.of("minecraft:inventory_changed");
+    public static final Identifier<Event> PLAYER_CHANGED_DIMENSION
+        = Identifier.of("minecraft:changed_dimension");
+    public static final Identifier<Event> RAID_OMEN
+        = Identifier.of("minecraft:raid_omen");
+    public static final Identifier<Event> RAID_WIN
+        = Identifier.of("minecraft:raid_win");
+    public static final Identifier<Event> FALL_FROM_HEIGHT
+        = Identifier.of("minecraft:fall_from_height");
+    public static final Identifier<Event> CRAFTER_RECIPE_CRAFTED
+        = Identifier.of("minecraft:crafter_recipe_crafted");
+    public static final Identifier<Event> LIGHTNING_STRIKE
+        = Identifier.of("minecraft:lightning_strike");
+    public static final Identifier<Event> TARGET_BLOCK_HIT
+        = Identifier.of("minecraft:target_block_hit");
 }
