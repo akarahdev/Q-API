@@ -10,6 +10,8 @@ public class ItemComponent implements ComponentMaster<Item, ItemComponent> {
     public static DamageComponent DAMAGE = new DamageComponent();
     public static CustomDataComponent CUSTOM_DATA = new CustomDataComponent();
     public static ItemNameComponent ITEM_NAME = new ItemNameComponent();
+    public static RarityComponent RARITY = new RarityComponent();
+    public static MaxStackSizeComponent MAX_STACK_SIZE = new MaxStackSizeComponent();
 
     private ItemComponent() {
     }
