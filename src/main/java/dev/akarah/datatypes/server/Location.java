@@ -2,6 +2,23 @@ package dev.akarah.datatypes.server;
 
 import dev.akarah.meta.ApiUsage;
 
+/**
+ * Represents a location in a {@link dev.akarah.dimension.Dimension}. This can represent the location of an entity,
+ * block, or anything else in a Dimension.
+ * This class is immutable, so you are unable to mutate the fields. To create a new {@link Location}, use
+ * the factory methods:
+ * - {@link Location#of(double, double, double, float, float)}
+ * - {@link Location#of(double, double, double)},
+ * or the with methods:
+ * - {@link Location#withX(double)}
+ * - {@link Location#withY(double)}
+ * - {@link Location#withZ(double)}
+ * - {@link Location#withPitch(float)}
+ * - {@link Location#withYaw(float)}
+ *
+ * Since locations are not dimension-specific, you must have an instance of a {@link dev.akarah.dimension.Dimension}
+ * in order to use them to interact with Minecraft.
+ */
 public class Location {
     double x;
     double y;

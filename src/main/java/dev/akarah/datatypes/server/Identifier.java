@@ -1,5 +1,17 @@
 package dev.akarah.datatypes.server;
 
+import dev.akarah.registry.Registries;
+
+/**
+ * Represents a namespaced identifier.
+ * These are used to look up values from Minecraft's or other plugins' registries.
+ *
+ * For example, to get an {@link dev.akarah.item.Item} from an item ID (e.g, `minecraft:diamond`),
+ * you must first turn the ID into an {@link Identifier} with the method {@link Identifier#of(String)}.
+ * From there, you can get the item registry {@link Registries#itemRegistry()} and fetch the item using the
+ * {@link dev.akarah.registry.Registry#get(Identifier)} method.
+ * @param <T> The type of this identifier.
+ */
 public class Identifier<T> {
     String namespace;
     String location;
