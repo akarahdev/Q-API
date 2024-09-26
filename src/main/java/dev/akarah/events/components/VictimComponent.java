@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public class VictimComponent implements AbstractComponent<Entity, EventData, EventComponents> {
     @Override
-    public Optional<Entity> get(EventData holder) {
-        return Optional.ofNullable(holder.victim);
+    public Entity get(EventData holder) {
+        return holder.victim;
     }
 
     @Override

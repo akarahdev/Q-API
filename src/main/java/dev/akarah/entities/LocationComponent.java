@@ -37,8 +37,8 @@ public class LocationComponent implements MutableComponent<LocationComponent, En
     }
 
     @Override
-    public Optional<LocationComponent> get(Entity holder) {
-        return Optional.ofNullable(holder.unsafe().location);
+    public LocationComponent get(Entity holder) {
+        return holder.unsafe().location;
     }
 
     @Override

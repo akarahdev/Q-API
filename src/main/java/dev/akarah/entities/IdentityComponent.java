@@ -11,7 +11,7 @@ public interface IdentityComponent extends AbstractComponent<IdentityComponent, 
     UUID uuid();
 
     @Override
-    default Optional<IdentityComponent> get(Entity holder) {
-        return Optional.ofNullable(holder.unsafe().identity);
+    default IdentityComponent get(Entity holder) {
+        return holder.unsafe().identity;
     }
 }

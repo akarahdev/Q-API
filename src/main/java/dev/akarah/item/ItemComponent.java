@@ -21,8 +21,8 @@ public class ItemComponent implements ComponentMaster<Item, ItemComponent> {
         }
 
         @Override
-        public Optional<List<String>> get(Item holder) {
-            return Optional.ofNullable(holder.itemLore);
+        public List<String> get(Item holder) {
+            return holder.itemLore;
         }
 
         @Override
@@ -38,8 +38,8 @@ public class ItemComponent implements ComponentMaster<Item, ItemComponent> {
         }
 
         @Override
-        public Optional<String> get(Item holder) {
-            return Optional.ofNullable(holder.itemName);
+        public String get(Item holder) {
+            return holder.itemName;
         }
 
         @Override
@@ -59,8 +59,8 @@ public class ItemComponent implements ComponentMaster<Item, ItemComponent> {
         }
 
         @Override
-        public Optional<DamageComponent> get(Item holder) {
-            return Optional.ofNullable(holder.damageComponent);
+        public DamageComponent get(Item holder) {
+            return holder.damageComponent;
         }
 
         @Override

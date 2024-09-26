@@ -77,8 +77,8 @@ public class EquipmentComponent implements MutableComponent<EquipmentComponent, 
     }
 
     @Override
-    public Optional<EquipmentComponent> get(Entity holder) {
-        return Optional.ofNullable(holder.unsafe().equipment);
+    public EquipmentComponent get(Entity holder) {
+        return holder.unsafe().equipment;
     }
 
     @Override

@@ -3,9 +3,11 @@ package dev.akarah.registry;
 import dev.akarah.datatypes.server.Identifier;
 import dev.akarah.meta.ApiUsage;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.stream.Stream;
 
 public interface Registry<T> {
     /**
@@ -15,7 +17,7 @@ public interface Registry<T> {
      * @return The value in the registry. Is empty if the key is not present
      * in the registry.
      */
-    Optional<T> lookup(Identifier<T> key);
+    T get(Identifier<T> key);
 
     /**
      * Attempts to put a key-value pair in the registry.
@@ -24,17 +26,17 @@ public interface Registry<T> {
      * @param value       The value to associate with the key.
      * @throws RegistryFrozenException If the registry is unable to be modified.
      */
-    void put(Identifier<T> resourceKey, T value) throws RegistryFrozenException;
+    void register(Identifier<T> resourceKey, T value) throws RegistryFrozenException;
 
     /**
-     * Fetches a list of all of the keys present in the registry.
+     * Fetches a list of all the keys present in the registry.
      *
-     * @return List of all of the present keys.
+     * @return List of all the present keys.
      */
-    List<Identifier<T>> keys();
+    Stream<Identifier<T>> keys();
 
     /**
-     * Parallels {@link Registry#lookup(Identifier)}, but is not type safe.
+     * Parallels {@link Registry#get(Identifier)}, but is not type safe.
      * This should not be used unless you are developing an internal API, as this has undefined behavior
      * when a key of another type is passed in.
      *
@@ -43,13 +45,17 @@ public interface Registry<T> {
      */
     @ApiUsage.Internal
     @ApiUsage.Unsafe
-    default T lookupUnsafe(Identifier<?> key) {
-        return this.lookup((Identifier<T>) key).orElse(null);
+    default T getUnsafe(Identifier<?> key) {
+        return this.getOptional((Identifier<T>) key).orElse(null);
+    }
+
+    default Optional<T> getOptional(Identifier<T> key) {
+        return Optional.ofNullable(this.get(key));
     }
 
     default void map(Identifier<T> key, Function<T, T> mappingFunction) {
-        this.lookup(key).ifPresent(value -> {
-            this.put(key, mappingFunction.apply(value));
+        this.getOptional(key).ifPresent(value -> {
+            this.register(key, mappingFunction.apply(value));
         });
     }
 }

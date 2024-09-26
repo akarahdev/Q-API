@@ -24,22 +24,22 @@ public final class Registries {
         = Identifier.of("q_mc:events");
 
     public static Registry<Event> eventRegistry() {
-        return Registries.findRegistry(Registries.EVENTS).get();
+        return Registries.findRegistry(Registries.EVENTS);
     }
     public static Registry<Item> itemRegistry() {
-        return Registries.findRegistry(Registries.ITEM).get();
+        return Registries.findRegistry(Registries.ITEM);
     }
     public static Registry<Dimension> dimensionRegistry() {
-        return Registries.findRegistry(Registries.DIMENSION).get();
+        return Registries.findRegistry(Registries.DIMENSION);
     }
     public static Registry<BlockType> blockTypeRegistry() {
-        return Registries.findRegistry(Registries.BLOCK_TYPES).get();
+        return Registries.findRegistry(Registries.BLOCK_TYPES);
     }
     public static Registry<EntityType> entityTypeRegistry() {
-        return Registries.findRegistry(Registries.ENTITY_TYPES).get();
+        return Registries.findRegistry(Registries.ENTITY_TYPES);
     }
-    public static <T> Optional<Registry<T>> findRegistry(Identifier<Registry<T>> registryResourceKey) {
+    public static <T> Registry<T> findRegistry(Identifier<Registry<T>> registryResourceKey) {
         // safety: type is guaranteed by generics at compile-time
-        return Optional.ofNullable((Registry<T>) Registries.REGISTRIES.lookupUnsafe(registryResourceKey));
+        return (Registry<T>) Registries.REGISTRIES.getUnsafe(registryResourceKey);
     }
 }

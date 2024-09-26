@@ -6,11 +6,11 @@ import java.util.Optional;
 
 public class CancellableComponent implements AbstractComponent<Boolean, EventData, EventComponents> {
     @Override
-    public Optional<Boolean> get(EventData holder) {
+    public Boolean get(EventData holder) {
         if (holder.isCancellable) {
-            return Optional.of(holder.cancelled);
+            return holder.cancelled;
         } else {
-            return Optional.empty();
+            return null;
         }
     }
 

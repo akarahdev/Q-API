@@ -7,7 +7,7 @@ public interface AbstractComponent<
     Holder extends ComponentHolder<Holder, Master>,
     Master extends ComponentMaster<Holder, Master>
     > {
-    Optional<Type> get(Holder holder);
+    Type get(Holder holder);
 
     boolean isPresent(Holder holder);
 }

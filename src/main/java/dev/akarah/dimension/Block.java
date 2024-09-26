@@ -25,7 +25,7 @@ public class Block {
     }
 
     public static Block of(Identifier<BlockType> blockTypeIdentifier) {
-        return new Block(Registries.findRegistry(Registries.BLOCK_TYPES).get().lookup(blockTypeIdentifier).get());
+        return new Block(Registries.blockTypeRegistry().get(blockTypeIdentifier));
     }
 
     public static Block of(String identifierString) {

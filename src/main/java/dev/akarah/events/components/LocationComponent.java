@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public class LocationComponent implements AbstractComponent<Location, EventData, EventComponents> {
     @Override
-    public Optional<Location> get(EventData holder) {
-        return Optional.ofNullable(holder.location);
+    public Location get(EventData holder) {
+        return holder.location;
     }
 
     @Override

@@ -20,8 +20,8 @@ public class SimpleAttribute implements MutableComponent<
     }
 
     @Override
-    public Optional<Double> get(AttributeContainer holder) {
-        return Optional.ofNullable(holder.attributes.getOrDefault(this.key, null));
+    public Double get(AttributeContainer holder) {
+        return holder.attributes.getOrDefault(this.key, null);
     }
 
     @Override

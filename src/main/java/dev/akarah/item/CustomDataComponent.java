@@ -31,8 +31,8 @@ public class CustomDataComponent implements MutableComponent<CustomDataComponent
     }
 
     @Override
-    public Optional<CustomDataComponent> get(Item holder) {
-        return Optional.ofNullable(holder.customDataComponent);
+    public CustomDataComponent get(Item holder) {
+        return holder.customDataComponent;
     }
 
     @Override

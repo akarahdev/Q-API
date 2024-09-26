@@ -10,7 +10,7 @@ public interface PlayerComponent extends AbstractComponent<PlayerComponent, Enti
     InventoryComponent inventory();
 
     @Override
-    default Optional<PlayerComponent> get(Entity holder) {
-        return Optional.ofNullable(holder.unsafe().player);
+    default PlayerComponent get(Entity holder) {
+        return holder.unsafe().player;
     }
 }

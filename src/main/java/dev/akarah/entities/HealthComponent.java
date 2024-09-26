@@ -35,8 +35,8 @@ public class HealthComponent implements MutableComponent<HealthComponent, Entity
     }
 
     @Override
-    public Optional<HealthComponent> get(Entity holder) {
-        return Optional.ofNullable(holder.unsafe().health);
+    public HealthComponent get(Entity holder) {
+        return holder.unsafe().health;
     }
 
     @Override
