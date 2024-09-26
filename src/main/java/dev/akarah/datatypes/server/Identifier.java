@@ -34,6 +34,14 @@ public class Identifier<T> {
         );
     }
 
+    public String namespace() {
+        return this.namespace;
+    }
+
+    public String location() {
+        return this.location;
+    }
+
     @Override
     public String toString() {
         return this.namespace + ":" + this.location;

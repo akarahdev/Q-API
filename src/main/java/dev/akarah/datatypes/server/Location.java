@@ -82,4 +82,36 @@ public class Location {
     public Location withYaw(float newYaw) {
         return new Location(x, y, z, pitch, newYaw);
     }
+
+    public Location shiftForward(double distance) {
+        double yawInRadians = Math.toRadians(yaw);
+        double pitchInRadians = Math.toRadians(pitch);
+
+        double shiftX = -Math.cos(pitchInRadians) * Math.sin(yawInRadians);
+        double shiftY = -Math.sin(pitchInRadians);
+        double shiftZ = Math.cos(pitchInRadians) * Math.cos(yawInRadians);
+
+        return this.shiftBy(Location.of(shiftX*distance, shiftY*distance, shiftZ*distance));
+    }
+
+    public Location shiftBy(Location other) {
+        return new Location(
+            this.x + other.x,
+            this.y + other.y,
+            this.z + other.z,
+            this.pitch + other.pitch,
+            this.yaw + other.yaw
+        );
+    }
+
+    public double distance(Location other) {
+        return Math.sqrt(distanceSquared(other));
+    }
+
+    public double distanceSquared(Location other) {
+        return
+            ((this.x - other.x) * (this.x - other.x))
+            + ((this.y - other.y) * (this.y - other.y))
+            + ((this.z - other.z) * (this.z - other.z));
+    }
 }
