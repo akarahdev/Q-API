@@ -1,5 +1,8 @@
 package dev.akarah.entities;
 
+import dev.akarah.objective.Objective;
+import dev.akarah.objective.ObjectiveSlot;
+
 public interface GUIComponent {
     void sendMessage(String message);
 
@@ -11,9 +14,7 @@ public interface GUIComponent {
 
     void sendTitleTimes(int duration, int fadeIn, int fadeOut);
 
-    void setSidebarName(String name);
-
-    void setSidebarLine(String text, int line);
+    void setObjectiveSlot(Objective objective, ObjectiveSlot slot);
 
     InventoryComponent currentOpenMenu();
 }

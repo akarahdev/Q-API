@@ -6,6 +6,7 @@ import dev.akarah.dimension.Dimension;
 import dev.akarah.entities.EntityType;
 import dev.akarah.events.Event;
 import dev.akarah.item.Item;
+import dev.akarah.objective.Objective;
 
 public final class Registries {
     public static Registry<Registry<?>> REGISTRIES;
@@ -20,6 +21,8 @@ public final class Registries {
         = Identifier.of("minecraft:block");
     public static final Identifier<Registry<Event>> EVENTS
         = Identifier.of("q_mc:events");
+    public static final Identifier<Registry<Objective>> OBJECTIVES
+            = Identifier.of("q_mc:objectives");
 
     public static Registry<Event> eventRegistry() {
         return Registries.findRegistry(Registries.EVENTS);
