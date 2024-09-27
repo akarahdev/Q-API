@@ -3,12 +3,30 @@ package dev.akarah.events;
 import dev.akarah.datatypes.server.Identifier;
 
 public class BuiltInEvents {
+    /**
+     * Invoked when a player connects to the server.
+     *
+     * {@link dev.akarah.events.components.EventComponents#ENTITY} is the player connecting.
+     * Guaranteed to have the {@link dev.akarah.entities.EntityComponent#PLAYER} component.
+     */
     public static final Identifier<Event> PLAYER_CONNECT_EVENT
         = Identifier.of("minecraft:connect");
+    /**
+     * Invoked when a player disconnects to the server.
+     *
+     * {@link dev.akarah.events.components.EventComponents#ENTITY} is the player connecting.
+     * Guaranteed to have the {@link dev.akarah.entities.EntityComponent#PLAYER} component.
+     */
     public static final Identifier<Event> PLAYER_DISCONNECT_EVENT
         = Identifier.of("minecraft:disconnect");
     public static final Identifier<Event> PLAYER_RESPAWN
             = Identifier.of("minecraft:respawn");
+
+    public static final Identifier<Event> LOCATION
+            = Identifier.of("minecraft:location");
+    public static final Identifier<Event> TICK
+            = Identifier.of("minecraft:tick");
+
     public static final Identifier<Event> LEFT_CLICK
             = Identifier.of("minecraft:left_click");
     public static final Identifier<Event> RIGHT_CLICK
