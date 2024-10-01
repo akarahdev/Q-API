@@ -27,5 +27,12 @@ public abstract class Entity implements ComponentHolder<Entity, EntityComponent>
 
         public IdentityComponent identity;
         public PlayerComponent player;
+
+        public String displayName;
+        public boolean invulnerable;
+        public boolean noAi;
+        public boolean noGravity;
+        public boolean ticks;
+        public int fire;
     }
 }

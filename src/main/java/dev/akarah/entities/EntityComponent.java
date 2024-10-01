@@ -9,7 +9,7 @@ public class EntityComponent implements ComponentMaster<Entity, EntityComponent>
     public static LocationComponent LOCATION =
         new LocationComponent(null, null);
     public static HealthComponent HEALTH =
-        new HealthComponent(0, 0);
+        new HealthComponent(0, 0, false);
     public static EquipmentComponent EQUIPMENT =
         new EquipmentComponent(null, null, null, null, null, null);
 

@@ -7,10 +7,12 @@ import java.util.Optional;
 public class HealthComponent implements MutableComponent<HealthComponent, Entity, EntityComponent> {
     double health;
     double maxHealth;
+    boolean invulnerable;
 
-    public HealthComponent(double health, double maxHealth) {
+    public HealthComponent(double health, double maxHealth, boolean invulnerable) {
         this.health = health;
         this.maxHealth = maxHealth;
+        this.invulnerable = invulnerable;
     }
 
     public double health() {
@@ -21,12 +23,18 @@ public class HealthComponent implements MutableComponent<HealthComponent, Entity
         return this.maxHealth;
     }
 
+    public boolean invulnerable() { return this.invulnerable; }
+
     public HealthComponent health(double health) {
-        return new HealthComponent(health, maxHealth);
+        return new HealthComponent(health, maxHealth, invulnerable);
     }
 
     public HealthComponent maxHealth(double maxHealth) {
-        return new HealthComponent(health, maxHealth);
+        return new HealthComponent(health, maxHealth, invulnerable);
+    }
+
+    public HealthComponent invulnerable(boolean invulnerable) {
+        return new HealthComponent(health, maxHealth, invulnerable);
     }
 
     @Override
